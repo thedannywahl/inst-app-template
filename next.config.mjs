@@ -1,9 +1,13 @@
+// @ts-check
+
 import withMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
 
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = withMDX()({
   experimental: {
     mdxRs: true,
