@@ -1,3 +1,5 @@
+"use client"
+
 import AppTray from "@/components/AppModal";
 import AppNav from "@/components/AppNav";
 import AppModal from "@/components/AppTray";

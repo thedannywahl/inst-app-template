@@ -1,5 +1,3 @@
-"use client";
-
 import { InstUI } from "@/components/AppLayout";
 import "@/public/globals.css";
 import { ContextProvider } from "context";
