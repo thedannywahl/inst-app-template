@@ -1,0 +1,6 @@
+{
+  "entryPoints": [
+    "app/layout.tsx"
+  ],
+  "out": "docs"
+}
