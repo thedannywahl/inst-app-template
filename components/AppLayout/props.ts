@@ -1,6 +1,6 @@
 import type { ThemeOrOverride } from '@instructure/emotion/types/EmotionTypes'
 
-const getThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
+const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
 
   return {
     componentOverrides: {
@@ -37,4 +37,4 @@ const getThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
   };
 }
 
-export default getThemeOverrides;
+export { ThemeOverrides };

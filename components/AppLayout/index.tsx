@@ -8,7 +8,7 @@ import { View } from "@instructure/ui";
 import { generateInstanceCounterMap } from "@instructure/ui-react-utils";
 import { useContexts } from "context";
 import type { Children } from "types";
-import getThemeOverrides from "./themeOverrides";
+import { ThemeOverrides } from "./props";
 
 /**
  * Renders the InstUI component, which provides a layout for the application.
@@ -25,7 +25,7 @@ export const InstUI: React.FC<Children> = ({
   const counter: Map<string, number> = generateInstanceCounterMap();
   counter.set("App", 0);
 
-  const InstUI = getThemeOverrides(isDark);
+  const InstUI = ThemeOverrides(isDark);
 
   return (
     <InstUISettingsProvider theme={InstUI} instanceCounterMap={counter}>
