@@ -28,6 +28,7 @@ yarn-error.log*
 # environment
 .env*.local
 .env*.development
+.env*.vault
 next-env.d.ts
 
 # typescript
