@@ -1,10 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
+import { config as dotenvxConfig } from "@dotenvx/dotenvx";
 
-/**
- * Read environment variables from file.
- * https://github.com/dotenvx/dotenvx
- */
-require('@dotenvx/dotenvx').config();
+dotenvxConfig();
 
 const appURL = 'http://127.0.0.1';
 const port = process.env.CI ? 3001 : 3000;
