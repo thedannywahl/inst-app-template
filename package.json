@@ -11,7 +11,7 @@
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^0.28.0",
+    "@dotenvx/dotenvx": "^0.29.1",
     "@instructure/emotion": "^8.54.0",
     "@instructure/ui": "^8.54.0",
     "@instructure/ui-react-utils": "^8.54.0",
@@ -22,20 +22,20 @@
     "ansis": "^3.0.1",
     "next": "^14.1.4",
     "next-auth": "^4.24.7",
-    "next-intl": "^3.11.0",
+    "next-intl": "^3.11.1",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.4",
-    "@playwright/experimental-ct-react": "^1.42.1",
-    "@playwright/test": "^1.42.1",
+    "@playwright/experimental-ct-react": "^1.43.0",
+    "@playwright/test": "^1.43.0",
     "@types/node": "^20.12.4",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "typedoc": "^0.25.12",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.4"
   },
   "packageManager": "pnpm@8.15.5+sha256.4b4efa12490e5055d59b9b9fc9438b7d581a6b7af3b5675eb5c5f447cee1a589"
 }
