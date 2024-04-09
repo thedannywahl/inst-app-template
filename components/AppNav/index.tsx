@@ -1,8 +1,7 @@
-import { IconInstructureLogoLine, TopNavBar, View } from "@instructure/ui";
+import { IconInstructureLogoLine, TopNavBar } from "@instructure/ui";
 import { useContexts } from "context";
-import type { TopNavBarItem } from "types";
+import type { TopNavBarItem } from "./types";
 import getActionItems from "./ActionItems";
-
 
 function LayoutTopNavBar(): JSX.Element {
 

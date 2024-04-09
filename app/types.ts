@@ -58,9 +58,6 @@ export type ShowTray = (
   props?: TrayProps,
 ) => void;
 
-// Nav
-export type TopNavBarItem = ComponentProps<typeof TopNavBar.Item>;
-
 // App
 export type Theme = "light" | "dark" | "system";
 
