@@ -7,6 +7,22 @@
   "organizeImports": {
     "enabled": true
   },
+  "files": {
+    "include": [
+      "app/*",
+      "components/*",
+      "lib/*",
+      "messages/*",
+      "tests/*",
+      "*.ts",
+      "*.tsx",
+      "*.json",
+      "*.jsonc",
+      "*.js",
+      "*.jsx",
+      "*.mjs"
+    ]
+  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",

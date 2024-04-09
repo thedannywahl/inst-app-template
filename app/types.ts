@@ -15,7 +15,7 @@ export type Children = {
 
 // Modal
 export type ModalProps =
-  | {
+  {
     modal:
     | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
       label?: string;
@@ -36,7 +36,7 @@ export type ShowModal = (
 
 // Tray
 export type TrayProps =
-  | (Omit<ComponentProps<typeof Tray>, "label"> & { label?: string })
+  (Omit<ComponentProps<typeof Tray>, "label"> & { label?: string })
   | undefined;
 
 export type ShowTray = (
