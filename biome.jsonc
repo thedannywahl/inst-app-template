@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": {
     "enabled": true,
-    "clientKind": "git"
+    "clientKind": "git",
+    "useIgnoreFile": true
   },
   "organizeImports": {
     "enabled": true
@@ -20,7 +21,9 @@
       "*.jsonc",
       "*.js",
       "*.jsx",
-      "*.mjs"
+      "*.mjs",
+      ".md",
+      ".mdx"
     ]
   },
   "formatter": {
