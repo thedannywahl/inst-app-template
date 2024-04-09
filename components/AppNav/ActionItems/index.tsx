@@ -1,6 +1,7 @@
 import { IconInfoLine, Text } from "@instructure/ui";
 import { useContexts } from "context";
-import type { TopNavBarItem, TrayProps } from "types";
+import type { TrayProps } from "types";
+import type { TopNavBarItem } from "../types";
 
 /**
  * Function to get Action Items for the application.

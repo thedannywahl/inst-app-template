@@ -2,7 +2,6 @@ import type {
   canvas as Standard,
   canvasHighContrast as HighContrast,
   Modal,
-  TopNavBar,
   Tray,
 } from "@instructure/ui";
 import type { ComponentProps, ReactNode } from "react";
@@ -23,7 +22,9 @@ export type Children = {
  * const str: AvailableLocale = "fr"; // This should cause a TypeScript error
  * const arr: AvailableLocale[] = ["fr"]; // This should cause a TypeScript error
  */
-export type Locale = Lowercase<string> | `${Lowercase<string>}-${Uppercase<string>}`;
+export type Locale = Lowercase<string>
+  | `${Lowercase<string>}-${Uppercase<string>}`;
+
 export type AvailableLocale = (typeof availableLocales)[number];
 
 // Modal
@@ -72,7 +73,8 @@ export type ApplyUI = (ui: UI) => void;
 export type ApplyTheme = (theme: Theme) => void;
 
 /**
- * Represents the context object containing information about the application, tray, and modal.
+ * Represents the context object containing information about the application,
+ * tray, and modal.
  */
 export interface Context {
   /**
@@ -271,7 +273,8 @@ export interface Context {
      * - `header` to the `Modal.Header` component
      * - `body` to the `Modal.Body` component
      * - `footer` to the `Modal.Footer` component
-     * `Modal.label` and `Modal.childre`n are omitted from the props object requirements. `label` can be optionally included in the `modal` object.
+     * `Modal.label` and `Modal.childre`n are omitted from the props object requirements.
+     * `label` can be optionally included in the `modal` object.
      * @example
      * {
      *   modal: { size: "medium" },
