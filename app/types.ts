@@ -5,7 +5,6 @@ import type {
   Tray,
 } from "@instructure/ui";
 import type { ComponentProps, ReactNode } from "react";
-import type { availableLocales } from "@/i18n";
 
 // General
 export type Content = JSX.Element | ReactNode | string;
@@ -13,19 +12,6 @@ export type Content = JSX.Element | ReactNode | string;
 export type Children = {
   children: React.ReactNode;
 };
-
-// i18n
-
-/**
- * @todo: typing `Locales` as a string pattern causes `AvailableLocale`
- * to be `string` instead of a union of the `locales` array.
- * const str: AvailableLocale = "fr"; // This should cause a TypeScript error
- * const arr: AvailableLocale[] = ["fr"]; // This should cause a TypeScript error
- */
-export type Locale = Lowercase<string>
-  | `${Lowercase<string>}-${Uppercase<string>}`;
-
-export type AvailableLocale = (typeof availableLocales)[number];
 
 // Modal
 export type ModalProps =
