@@ -70,6 +70,13 @@ function Page(): JSX.Element {
         onClick={() => App.toggleTheme()}
         themeOverride={{ labelColor: "red" }}
       /> Theme: {App.theme}<br /><Text as="span" color="danger">*experimental</Text>
+
+      <Text as="p">
+        App Name: {process.env.name}<br />
+        App Version: {process.env.version}<br />
+        App Environment: {process.env.NODE_ENV}<br />
+      </Text>
+
     </>
   );
 }
