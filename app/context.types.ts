@@ -20,14 +20,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import type {
-    canvas,
-    canvasHighContrast
-} from "@instructure/ui";
+import type { canvas, canvasHighContrast } from "@instructure/ui";
 
 export type Theme = "light" | "dark" | "system";
 
 export type ValidUI = {
-    standard: typeof canvas;
-    highContrast: typeof canvasHighContrast;
+  standard: typeof canvas;
+  highContrast: typeof canvasHighContrast;
 };

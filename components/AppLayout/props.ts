@@ -1,7 +1,6 @@
-import type { ThemeOrOverride } from '@instructure/emotion/types/EmotionTypes'
+import type { ThemeOrOverride } from "@instructure/emotion/types/EmotionTypes";
 
 const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
-
   return {
     componentOverrides: {
       "TopNavBar.Layout": {
@@ -13,28 +12,28 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
       canvas: {
         componentOverrides: {
           View: {
-            backgroundPrimary: isDark ? "#2D3B45" : "#white"
+            backgroundPrimary: isDark ? "#2D3B45" : "#white",
           },
           "TopNavBar.Layout": {
             desktopBackgroundInverse: "#f5f5f5",
             desktopBottomBorder: "0.0625rem solid!important",
-            smallViewportBackgroundInverse: "#F5F5F5"
-          }
+            smallViewportBackgroundInverse: "#F5F5F5",
+          },
         },
       },
       "canvas-high-contrast": {
         componentOverrides: {
           View: {
-            backgroundPrimary: isDark ? "black" : "white"
+            backgroundPrimary: isDark ? "black" : "white",
           },
           "TopNavBar.Layout": {
             desktopBackground: "#000",
             desktopBottomBorder: "0.0625rem solid!important",
-          }
+          },
         },
       },
     },
   };
-}
+};
 
 export { ThemeOverrides };

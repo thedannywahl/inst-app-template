@@ -25,9 +25,7 @@
       ".md",
       ".mdx"
     ],
-    "ignore": [
-      "docs/*"
-    ]
+    "ignore": ["docs/*"]
   },
   "formatter": {
     "enabled": true,
@@ -52,9 +50,7 @@
       ".md",
       ".mdx"
     ],
-    "ignore": [
-      "docs/*"
-    ]
+    "ignore": ["docs/*"]
   },
   "linter": {
     "enabled": true,
@@ -81,9 +77,7 @@
       ".md",
       ".mdx"
     ],
-    "ignore": [
-      "docs/*"
-    ]
+    "ignore": ["docs/*"]
   },
   "javascript": {
     "parser": {

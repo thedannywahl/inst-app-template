@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Heading, Text, View, Checkbox } from "@instructure/ui";
+import { Button, Checkbox, Heading, Text, View } from "@instructure/ui";
 import { useContexts } from "context";
 
 /**
@@ -55,28 +55,37 @@ function Page(): JSX.Element {
       <Heading level="h2">Context Values</Heading>
       <Text as="p">pork chop leberkas flank venison ham chicken.</Text>
       <Button onClick={showModal}>Show Modal</Button>
-      <br /><br />
+      <br />
+      <br />
       <Checkbox
         id="ui"
         label={`High contrast mode: ${App.isHighContrast}`}
         variant="toggle"
         onClick={() => App.toggleUI()}
-      /> UI: {App.ui}
-      <br /><br />
+      />{" "}
+      UI: {App.ui}
+      <br />
+      <br />
       <Checkbox
         id="theme"
         label={`darkmode*: ${App.isDark}`}
         variant="toggle"
         onClick={() => App.toggleTheme()}
         themeOverride={{ labelColor: "red" }}
-      /> Theme: {App.theme}<br /><Text as="span" color="danger">*experimental</Text>
-
-      <Text as="p">
-        App Name: {process.env.name}<br />
-        App Version: {process.env.version}<br />
-        App Environment: {process.env.NODE_ENV}<br />
+      />{" "}
+      Theme: {App.theme}
+      <br />
+      <Text as="span" color="danger">
+        *experimental
       </Text>
-
+      <Text as="p">
+        App Name: {process.env.name}
+        <br />
+        App Version: {process.env.version}
+        <br />
+        App Environment: {process.env.NODE_ENV}
+        <br />
+      </Text>
     </>
   );
 }

@@ -1,11 +1,12 @@
 import { IconInstructureLogoLine, TopNavBar } from "@instructure/ui";
 import { useContexts } from "context";
-import type { TopNavBarItem } from "./types";
 import getActionItems from "./ActionItems";
+import type { TopNavBarItem } from "./types";
 
 function LayoutTopNavBar(): JSX.Element {
-
-  const { App: { isDark } } = useContexts();
+  const {
+    App: { isDark },
+  } = useContexts();
 
   const handleDropdownMenuToggle = (isMenuOpen: boolean) => {
     const htmlEl = document.querySelector("html");

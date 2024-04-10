@@ -1,7 +1,7 @@
+import { config as dotenvxConfig } from "@dotenvx/dotenvx";
 // @ts-check
 import withMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
-import { config as dotenvxConfig } from "@dotenvx/dotenvx";
 import pkg from "./package.json" assert { type: "json" };
 
 dotenvxConfig();

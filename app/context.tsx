@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import type React from "react";
 import {
@@ -10,9 +10,9 @@ import {
 } from "react";
 
 import {
-  canvas as standard,
-  canvasHighContrast as highContrast,
   type Modal,
+  canvasHighContrast as highContrast,
+  canvas as standard,
 } from "@instructure/ui";
 
 import type {
@@ -99,8 +99,8 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>("light");
 
   /**
-    * Represents the state of the high contrast UI.
-    */
+   * Represents the state of the high contrast UI.
+   */
   const [isDark, setIsDark] = useState<boolean>(false);
 
   /**
@@ -127,7 +127,7 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   const validUIs: ValidUI = {
     standard: standard,
-    highContrast: highContrast
+    highContrast: highContrast,
   } as const;
 
   /**
@@ -253,8 +253,8 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   const [modalProps, setModalProps] = useState<
     | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-      label?: string;
-    })
+        label?: string;
+      })
     | undefined
   >(undefined);
 

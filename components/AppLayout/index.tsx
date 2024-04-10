@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import AppTray from "@/components/AppModal";
 import AppNav from "@/components/AppNav";
@@ -19,8 +19,9 @@ import { ThemeOverrides } from "./props";
 export const InstUI: React.FC<Children> = ({
   children,
 }: { children?: React.ReactNode }): JSX.Element => {
-
-  const { App: { ui, theme, isDark } } = useContexts();
+  const {
+    App: { ui, theme, isDark },
+  } = useContexts();
 
   const counter: Map<string, number> = generateInstanceCounterMap();
   counter.set("App", 0);
@@ -50,7 +51,7 @@ export const InstUI: React.FC<Children> = ({
            * TopNavBar.Layout.desktopHeight + TopNavBar.Layout.desktopBottomBorder
            * @todo: calc height based on viewport width and top nav height + border
            * @default: calc(100vh - 4.0625rem)
-           * 
+           *
            * */
           minHeight={"calc(100vh - 4.0625rem)"}
           margin="0 auto"
@@ -60,6 +61,6 @@ export const InstUI: React.FC<Children> = ({
         <AppTray />
         <AppModal />
       </View>
-    </InstUISettingsProvider >
+    </InstUISettingsProvider>
   );
 };

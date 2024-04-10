@@ -1,9 +1,9 @@
-import { defineConfig, devices } from "@playwright/test";
 import { config as dotenvxConfig } from "@dotenvx/dotenvx";
+import { defineConfig, devices } from "@playwright/test";
 
 dotenvxConfig();
 
-const appURL = 'http://127.0.0.1';
+const appURL = "http://127.0.0.1";
 const port = process.env.CI ? 3001 : 3000;
 
 export default defineConfig({
@@ -31,21 +31,21 @@ export default defineConfig({
       use: { ...devices["Desktop Safari"] },
     },
     {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
+      name: "Mobile Chrome",
+      use: { ...devices["Pixel 5"] },
     },
     {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
+      name: "Mobile Safari",
+      use: { ...devices["iPhone 12"] },
     },
     {
-      name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      name: "Microsoft Edge",
+      use: { ...devices["Desktop Edge"], channel: "msedge" },
     },
   ],
   webServer: {
     command: `PORT=${port} pnpm dev`,
     url: appURL,
     reuseExistingServer: !process.env.CI,
-  }
+  },
 });

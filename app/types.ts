@@ -1,7 +1,7 @@
 import type {
-  canvas as Standard,
   canvasHighContrast as HighContrast,
   Modal,
+  canvas as Standard,
   Tray,
 } from "@instructure/ui";
 import type { ComponentProps, ReactNode } from "react";
@@ -15,16 +15,16 @@ export type Children = {
 
 // Modal
 export type ModalProps =
-  {
-    modal:
-    | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-      label?: string;
-    })
-    | undefined;
-    header?: ComponentProps<typeof Modal.Header>;
-    body?: ComponentProps<typeof Modal.Body>;
-    footer?: ComponentProps<typeof Modal.Footer>;
-  }
+  | {
+      modal:
+        | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
+            label?: string;
+          })
+        | undefined;
+      header?: ComponentProps<typeof Modal.Header>;
+      body?: ComponentProps<typeof Modal.Body>;
+      footer?: ComponentProps<typeof Modal.Footer>;
+    }
   | undefined;
 
 export type ShowModal = (
@@ -36,7 +36,7 @@ export type ShowModal = (
 
 // Tray
 export type TrayProps =
-  (Omit<ComponentProps<typeof Tray>, "label"> & { label?: string })
+  | (Omit<ComponentProps<typeof Tray>, "label"> & { label?: string })
   | undefined;
 
 export type ShowTray = (
@@ -127,14 +127,14 @@ export interface Context {
 
     /**
      * Represents whether `highContrast` UI is active or not
-     * 
+     *
      * @default: false
      */
     isHighContrast: boolean;
 
     /**
      * Represents whether `dark` theme is active or not
-     * 
+     *
      * @default: false
      */
     isDark: boolean;
