@@ -1,7 +1,10 @@
 // @ts-check
-
 import withMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
+import { config as dotenvxConfig } from "@dotenvx/dotenvx";
+import pkg from "./package.json" assert { type: "json" };
+
+dotenvxConfig();
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -9,8 +12,21 @@ const withNextIntl = createNextIntlPlugin();
  * @type {import('next').NextConfig}
  */
 const nextConfig = withMDX()({
+  env: {
+    name: pkg.name,
+    version: pkg.version,
+  },
   experimental: {
     mdxRs: true,
+    optimizePackageImports: [
+      "@instructure/ui",
+      "@instructure/emotion",
+      "@instructure/ui-react-utils",
+    ],
+  },
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: "bottom-right",
   },
   compiler: {
     emotion: true,
