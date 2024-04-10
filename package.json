@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome lint",
-    "grr": "biome rage",
+    "lint": "biome lint ./",
+    "format": "biome format ./",
+    "rage": "biome rage",
     "test": "playwright test",
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
