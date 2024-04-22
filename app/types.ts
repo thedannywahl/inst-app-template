@@ -16,15 +16,15 @@ export type Children = {
 // Modal
 export type ModalProps =
   | {
-      modal:
-        | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-            label?: string;
-          })
-        | undefined;
-      header?: ComponentProps<typeof Modal.Header>;
-      body?: ComponentProps<typeof Modal.Body>;
-      footer?: ComponentProps<typeof Modal.Footer>;
-    }
+    modal:
+    | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
+      label?: string;
+    })
+    | undefined;
+    header?: ComponentProps<typeof Modal.Header>;
+    body?: ComponentProps<typeof Modal.Body>;
+    footer?: ComponentProps<typeof Modal.Footer>;
+  }
   | undefined;
 
 export type ShowModal = (
@@ -81,11 +81,6 @@ export interface Context {
      * Applies the specified UI to the application.
      */
     applyUI: ApplyUI;
-
-    /**
-     * Toggles the UI between `standard` and `highContrast`
-     */
-    toggleTheme: () => void;
 
     /**
      * Applies the specified UI to the application.

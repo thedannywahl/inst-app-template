@@ -7,6 +7,7 @@ import {
   useContext,
   useEffect,
   useState,
+  useLayoutEffect
 } from "react";
 
 import {
@@ -78,7 +79,7 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    *   if (window?.frameElement) setIsInFrame(true);
    * });
    */
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window?.frameElement) setIsInFrame(true);
   });
 
@@ -96,31 +97,53 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
   /**
    * Represents the theme state and provides a function to update it.
    */
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("system");
 
   /**
-   * Represents the state of the high contrast UI.
+   * Represents the state of the dark mode.
    */
   const [isDark, setIsDark] = useState<boolean>(false);
 
   /**
    * Applies the specified theme.
    *
-   * @param theme - The theme to apply.
+   * @param t - The theme to apply.
    * @todo: store selected theme in localStorage
    */
   const applyTheme = (t: Theme): void => {
-    setTheme(Object.keys(validThemes).includes(t) ? t : "dark");
+    console.log("Theme:", theme)
+    console.log("t:", t)
+    const newTheme = t === "system" ? "system" : t === "dark" ? "dark" : "light";
+    console.log("newTheme:", newTheme)
+
+    if (newTheme === "system") {
+      const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (prefersColorScheme.matches) {
+        setIsDark(true)
+      } else {
+        setIsDark(false)
+      }
+    } else if (newTheme === "dark") {
+      setIsDark(true);
+    } else {
+      setIsDark(false);
+    }
+    setTheme(newTheme);
+    validUIs[ui].use();
   };
 
   /**
-   * Toggles the contrast mode between light and dark.
+   * useEffect hook for applying the theme.
    */
-  const toggleTheme = (): void => {
-    setIsDark(!isDark);
-    isDark ? setTheme("light") : setTheme("dark");
-    validUIs[ui].use();
-  };
+  useLayoutEffect(() => {
+    const prefersColorScheme = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    prefersColorScheme.addEventListener("change", (e) => {
+      applyTheme("system")
+    })
+
+  }, [applyTheme])
 
   /**
    * A mapping of valid UIs and their corresponding components.
@@ -158,6 +181,23 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
     setIsHighContrast(!isHighContrast);
     isHighContrast ? applyUI("standard") : applyUI("highContrast");
   };
+
+  /**
+   * Represents whether the user wants to save UI/Theme preferences
+   */
+  const [saveUIPrefs, setSaveUIPrefs] = useState<boolean>(false);
+
+  /**
+   * useEffect hook for initial render.
+   * @TODO: fix warning about exhaustive deps
+   */
+  useEffect(() => {
+    console.log("run once.")
+    const prefersColorScheme = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    if (prefersColorScheme.matches) applyTheme("system")
+  }, [])
 
   // AppTray
 
@@ -253,8 +293,8 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   const [modalProps, setModalProps] = useState<
     | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-        label?: string;
-      })
+      label?: string;
+    })
     | undefined
   >(undefined);
 
@@ -353,7 +393,6 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
         App: {
           toggleUI,
           applyUI,
-          toggleTheme,
           applyTheme,
           isInFrame,
           theme,

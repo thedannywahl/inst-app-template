@@ -1,7 +1,8 @@
 "use client";
 
-import { Button, Checkbox, Heading, Text, View } from "@instructure/ui";
+import { Button, Checkbox, Heading, Text, View, RadioInput, RadioInputGroup } from "@instructure/ui";
 import { useContexts } from "context";
+import type { Theme } from "types"
 
 /**
  * Renders the Page component.
@@ -22,6 +23,10 @@ function Page(): JSX.Element {
       header: { spacing: "compact" },
     });
   };
+
+  const handleThemeChange = (event, value: string) => {
+    App.applyTheme(value as Theme);
+  }
 
   /**
    * Returns an array of key-value pairs from the given object.
@@ -66,14 +71,26 @@ function Page(): JSX.Element {
       UI: {App.ui}
       <br />
       <br />
+      <RadioInputGroup
+        name="Theme"
+        defaultValue="system"
+        description="Themes"
+        onChange={handleThemeChange}
+        variant="toggle">
+        <RadioInput label="System" value="system" context="danger" />
+        <RadioInput label="Light" value="light" context="warning" />
+        <RadioInput label="Dark" value="dark" />
+      </RadioInputGroup>
+      <br />
+      theme: {App.theme}
+      <br />
+      <br />
       <Checkbox
         id="theme"
-        label={`darkmode*: ${App.isDark}`}
+        label="Remember my choice"
         variant="toggle"
-        onClick={() => App.toggleTheme()}
-        themeOverride={{ labelColor: "red" }}
       />{" "}
-      Theme: {App.theme}
+      <br />
       <br />
       <Text as="span" color="danger">
         *experimental
