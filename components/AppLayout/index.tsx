@@ -46,7 +46,6 @@ export const InstUI: React.FC<Children> = ({
           as="main"
           maxWidth="59.25rem"
           minWidth="20rem"
-          background="primary"
           /**
            * TopNavBar.Layout.desktopHeight + TopNavBar.Layout.desktopBottomBorder
            * @todo: calc height based on viewport width and top nav height + border

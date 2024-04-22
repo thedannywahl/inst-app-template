@@ -53,6 +53,7 @@ function LayoutAppTray(): JSX.Element {
     <Tray
       open={AppTray.isOpen}
       onDismiss={hideTray}
+      border={true}
       label={AppTray?.props?.label || "App Tray"}
       shouldCloseOnDocumentClick
       {...AppTray?.props}

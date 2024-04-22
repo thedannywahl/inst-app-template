@@ -2,3 +2,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+/* Component Overrides */
+
+/* Theme Overrides */
+
+/* - Standard */
+
+/* -- Modal */
+.standard.dark [data-cid="Modal"]>span {
+  /* @NOTE: Modal does not provide an interface to
+   * override the background color of the overlay
+   * 
+   * @COLOR: standard.colors.backgroundDarkest * 75% opacity
+   */
+  background: #2D3B45BF;
+}
+
+/* - highContrast */
+
+/* -- Modal */
+.highContrast.dark [data-cid="Modal"]>span {
+  /* @NOTE: Modal does not provide an interface to
+   * override the background color of the overlay
+   * 
+   * @COLOR: black * 75% opacity
+   */
+  background: #000000BF;
+}
