@@ -31,6 +31,9 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
           "Modal.Header": {
             inverseBorderColor: standard.colors.backgroundDark
           },
+          RadioInput: {
+            labelColor: isDark ? standard.colors.textLightest : standard.colors.textDarkest,
+          },
           "TopNavBar.Layout": {
             desktopBackground: darkestGray,
             desktopBackgroundInverse: gray,
@@ -67,6 +70,9 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
           "Modal.Header": {
             inverseBackground: black,
             inverseBorderColor: white
+          },
+          RadioInput: {
+            labelColor: isDark ? white : black,
           },
           "TopNavBar.Layout": {
             desktopBackground: black,
