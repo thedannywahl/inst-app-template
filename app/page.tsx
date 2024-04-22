@@ -76,10 +76,11 @@ function Page(): JSX.Element {
         defaultValue="system"
         description="Themes"
         onChange={handleThemeChange}
-        variant="toggle">
-        <RadioInput label="System" value="system" context="danger" />
-        <RadioInput label="Light" value="light" context="warning" />
-        <RadioInput label="Dark" value="dark" />
+        variant="toggle"
+      >
+        {["system", "light", "dark"].map((theme) => (
+          <RadioInput label={theme} value={theme} key={theme} id={theme} />
+        ))}
       </RadioInputGroup>
       <br />
       theme: {App.theme}
