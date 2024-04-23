@@ -111,10 +111,7 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    * @todo: store selected theme in localStorage
    */
   const applyTheme = (t: Theme): void => {
-    console.log("Theme:", theme)
-    console.log("t:", t)
     const newTheme = t === "system" ? "system" : t === "dark" ? "dark" : "light";
-    console.log("newTheme:", newTheme)
 
     if (newTheme === "system") {
       const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
