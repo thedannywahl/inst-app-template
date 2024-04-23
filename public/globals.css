@@ -15,14 +15,8 @@ body {
 
 /* -- CloseButton */
 
-.dark [data-cid="CloseButton"]>button::before {
+.standard.dark [data-cid="CloseButton"]>button::before {
   border-color: var(--standard-colors-fire)
-}
-
-@media (prefers-color-scheme: dark) {
-  .standard.system [data-cid="CloseButton"]>button::before {
-    border-color: var(--standard-colors-fire)
-  }
 }
 
 /* -- Modal */
@@ -36,12 +30,6 @@ body {
   background: #2D3B45BF;
 }
 
-@media (prefers-color-scheme: dark) {
-  .standard.system [data-cid="Modal"]>[class*="-mask"] {
-    background: #2D3B45BF;
-  }
-}
-
 /* - highContrast */
 
 /* -- Modal */
@@ -53,10 +41,4 @@ body {
    */
 .highContrast.dark [data-cid="Modal"]>[class*="-mask"] {
   background: #000000E6;
-}
-
-@media (prefers-color-scheme: dark) {
-  .highContrast.system [data-cid="Modal"]>[class*="-mask"] {
-    background: #000000E6;
-  }
 }
