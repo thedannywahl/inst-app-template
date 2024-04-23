@@ -1,5 +1,7 @@
 :root {
   --standard-colors-fire: #FC5E13;
+  --standard-colors-licorice: #2D3B45;
+  --standard-colors-white: #FFF;
 }
 
 body {
@@ -11,34 +13,27 @@ body {
 
 /* Theme Overrides */
 
-/* - Standard */
 
-/* -- CloseButton */
+/* - BaseButton */
 
-.standard.dark [data-cid="CloseButton"]>button::before {
-  border-color: var(--standard-colors-fire)
+.dark [data-cid*="BaseButton"]::before {
+  border-color: var(--standard-colors-white);
 }
 
-/* -- Modal */
+/* - Modal */
 
 /* @NOTE: Modal does not provide an interface to
-   * override the background color of the overlay
-   * 
-   * @COLOR: standard.colors.backgroundDarkest * 75% opacity
-   */
+ * override the background color of the overlay
+ */
 .standard.dark [data-cid="Modal"]>[class*="-mask"] {
-  background: #2D3B45BF;
+  /* @TODO: Switch to Relative Colors once Firefox adds support
+   * https://caniuse.com/css-relative-colors
+   * rgb(from var(--color) r g b / 75%)
+   * @COLOR: standard.colors.backgroundDarkest * 75% opacity */
+  background: color-mix(in srgb, var(--standard-colors-licorice) 75%, transparent)
 }
 
-/* - highContrast */
-
-/* -- Modal */
-
-/* @NOTE: Modal does not provide an interface to
-   * override the background color of the overlay
-   * 
-   * @COLOR: black * 90% opacity
-   */
 .highContrast.dark [data-cid="Modal"]>[class*="-mask"] {
+  /* @COLOR: black * 90% opacity */
   background: #000000E6;
 }

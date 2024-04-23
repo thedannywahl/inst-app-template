@@ -23,7 +23,7 @@ function LayoutAppTray(): JSX.Element {
    * const { Tray: AppTray } = useContexts();
    * ```
    */
-  const { Tray: AppTray } = useContexts();
+  const { Tray: AppTray, App: { isDark } } = useContexts();
 
   /**
    * The header element for the AppTray component.
@@ -41,6 +41,7 @@ function LayoutAppTray(): JSX.Element {
       <Flex.Item>
         <CloseButton
           placement="end"
+          color={isDark ? "primary-inverse" : "primary"}
           offset="small"
           onClick={hideTray}
           screenReaderLabel="Close"
