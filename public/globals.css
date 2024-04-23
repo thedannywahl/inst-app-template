@@ -1,3 +1,7 @@
+:root {
+  --standard-colors-fire: #FC5E13;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8,6 +12,18 @@ body {
 /* Theme Overrides */
 
 /* - Standard */
+
+/* -- CloseButton */
+
+.dark [data-cid="CloseButton"]>button::before {
+  border-color: var(--standard-colors-fire)
+}
+
+@media (prefers-color-scheme: dark) {
+  .standard.system [data-cid="CloseButton"]>button::before {
+    border-color: var(--standard-colors-fire)
+  }
+}
 
 /* -- Modal */
 

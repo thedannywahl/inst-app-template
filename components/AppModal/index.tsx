@@ -21,6 +21,7 @@ function LayoutAppModal(): JSX.Element {
         offset="small"
         onClick={hideModal}
         screenReaderLabel="Close"
+        color={isDark ? "primary-inverse" : "primary"}
       />
     );
   };
