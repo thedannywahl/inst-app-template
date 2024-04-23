@@ -19,6 +19,28 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
     themeOverrides: {
       canvas: {
         componentOverrides: {
+          Alert: {
+            background: isDark
+              ? standard.colors.oxford
+              : standard.colors.backgroundLightest,
+            color: isDark
+              ? standard.colors.textLight
+              : standard.colors.textDarkest,
+          },
+          Avatar: {
+            background: isDark
+              ? standard.colors.oxford
+              : standard.colors.backgroundLightest,
+            borderColor: isDark
+              ? standard.colors.borderDark
+              : standard.colors.tiara,
+            boxShadowColor: isDark
+              ? "rgba(255, 255, 255, 0.28)"
+              : "rgba(45, 59, 69, 0.12)",
+            color: isDark
+              ? standard.colors.textLight
+              : standard.colors.textInfo,
+          },
           BaseButton: {
             secondaryColor: standard.colors.textDarkest,
             secondaryBorderColor: "rgb(219, 219, 219)",
@@ -98,9 +120,7 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             checkedBackground: isDark
               ? standard.colors.backgroundSuccess
               : standard.colors.backgroundSuccess,
-            uncheckedIconColor: isDark
-              ? standard.colors.textDarkest
-              : standard.colors.textDarkest,
+            uncheckedIconColor: standard.colors.textDarkest,
             focusOutlineColor: isDark
               ? standard.colors.borderLightest
               : standard.colors.borderInfo,
@@ -131,25 +151,29 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
       },
       "canvas-high-contrast": {
         componentOverrides: {
+          Alert: {
+            background: isDark ? black : highContrast.colors.backgroundLightest,
+            color: isDark ? highContrast.colors.textLightest : black,
+          },
           BaseButton: {
-            secondaryColor: standard.colors.textDarkest,
-            secondaryBorderColor: standard.colors.borderDark,
-            secondaryBackground: standard.colors.backgroundLight,
+            secondaryColor: highContrast.colors.textDarkest,
+            secondaryBorderColor: highContrast.colors.borderDark,
+            secondaryBackground: highContrast.colors.backgroundLight,
             secondaryHoverBackground: isDark
               ? "rgb(242, 242, 242)"
-              : standard.colors.backgroundLight,
+              : highContrast.colors.backgroundLight,
             secondaryActiveBackground: isDark
-              ? standard.colors.backgroundLight
+              ? highContrast.colors.backgroundLight
               : "rgb(230, 230, 230)",
             secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
               isDark ? "rgb(191, 191, 191)" : "rgb(230, 230, 230)"
             }`,
             secondaryGhostColor: isDark
-              ? standard.colors.textLight
-              : standard.colors.textDarkest,
+              ? highContrast.colors.textLightest
+              : black,
             secondaryGhostBorderColor: isDark
-              ? standard.colors.borderLight
-              : standard.colors.borderDarkest,
+              ? highContrast.colors.borderLight
+              : highContrast.colors.borderDarkest,
             secondaryGhostBackground: "transparent",
             secondaryGhostHoverBackground: isDark
               ? "rgba(255, 255, 255, 0.1)"
@@ -160,18 +184,14 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             }`,
           },
           FormFieldLabel: {
-            color: isDark
-              ? standard.colors.textLightest
-              : standard.colors.textDarkest,
+            color: isDark ? highContrast.colors.textLightest : black,
           },
           FormFieldMessage: {
-            color: isDark
-              ? standard.colors.textLightest
-              : standard.colors.textDarkest,
+            color: isDark ? highContrast.colors.textLightest : black,
           },
           Modal: {
             inverseBackground: black,
-            borderColor: isDark ? white : black,
+            borderColor: isDark ? highContrast.colors.borderLightest : black,
           },
           "Modal.Body": {
             inverseBackground: black,
@@ -185,27 +205,23 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             inverseBorderColor: white,
           },
           RadioInput: {
-            labelColor: isDark
-              ? standard.colors.textLightest
-              : standard.colors.textDarkest,
+            labelColor: isDark ? highContrast.colors.textLightest : black,
             focusBorderColor: isDark
-              ? standard.colors.borderLightest
-              : standard.colors.borderInfo,
+              ? highContrast.colors.borderLightest
+              : highContrast.colors.borderInfo,
           },
           ToggleFacade: {
-            color: isDark
-              ? standard.colors.textDarkest
-              : standard.colors.textLightest,
+            color: isDark ? black : highContrast.colors.textLightest,
             background: isDark
-              ? standard.colors.backgroundDarkest
-              : standard.colors.backgroundLightest,
-            borderColor: standard.colors.borderMedium,
+              ? highContrast.colors.backgroundDarkest
+              : highContrast.colors.backgroundMedium,
+            borderColor: isDark
+              ? highContrast.colors.borderLightest
+              : highContrast.colors.borderDark,
             checkedBackground: isDark
-              ? standard.colors.backgroundSuccess
-              : standard.colors.backgroundSuccess,
-            uncheckedIconColor: isDark
-              ? standard.colors.textDarkest
-              : standard.colors.textDarkest,
+              ? highContrast.colors.backgroundSuccess
+              : highContrast.colors.backgroundSuccess,
+            uncheckedIconColor: isDark ? black : standard.colors.textDarkest,
             focusOutlineColor: isDark
               ? standard.colors.borderLightest
               : standard.colors.borderInfo,
@@ -218,12 +234,14 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             desktopBottomBorder: "0.0625rem solid!important",
           },
           Tray: {
-            background: isDark ? black : white,
-            borderColor: isDark ? white : black,
+            background: isDark ? black : highContrast.colors.backgroundLightest,
+            borderColor: isDark ? highContrast.colors.borderLightest : black,
           },
           View: {
-            backgroundPrimary: isDark ? black : white,
-            color: isDark ? white : black,
+            backgroundPrimary: isDark
+              ? black
+              : highContrast.colors.backgroundLightest,
+            color: isDark ? highContrast.colors.textLightest : black,
           },
         },
       },
