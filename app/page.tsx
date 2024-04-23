@@ -3,6 +3,7 @@
 import { Button, Checkbox, Heading, Text, View, RadioInput, RadioInputGroup } from "@instructure/ui";
 import { useContexts } from "context";
 import type { Theme } from "types"
+import type { ChangeEvent } from "react";
 
 /**
  * Renders the Page component.
@@ -24,8 +25,13 @@ function Page(): JSX.Element {
     });
   };
 
-  const handleThemeChange = (event, value: string) => {
-    App.applyTheme(value as Theme);
+  const handleThemeChange = (event: ChangeEvent<HTMLInputElement>, value: string) => {
+    try {
+      App.applyTheme(value as Theme)
+    } catch (error) {
+      console.error(error)
+      console.error(event)
+    }
   }
 
   /**
