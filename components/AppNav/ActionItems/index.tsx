@@ -1,4 +1,4 @@
-import { IconInfoLine, Text } from "@instructure/ui";
+import { IconInfoLine, Text, View } from "@instructure/ui";
 import { useContexts } from "context";
 import type { TrayProps } from "types";
 import type { TopNavBarItem } from "../types";
@@ -17,7 +17,7 @@ function getActionItems(): TopNavBarItem[] {
    * Information Action Item.
    */
   const infoTray: [JSX.Element, string, TrayProps] = [
-    <>
+    <View key="tray">
       <Text as="p">
         This site and its contents are maintained by Instructure, inc.
       </Text>
@@ -30,7 +30,7 @@ function getActionItems(): TopNavBarItem[] {
       </Text>
       <Text as="p">Reach out to your sales contact.</Text>
       <Text as="p">For general inquiries email.</Text>
-    </>,
+    </View>,
     "Info",
     { placement: "end" },
   ] as const;
