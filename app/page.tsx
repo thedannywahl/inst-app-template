@@ -1,8 +1,6 @@
 "use client";
 import { signature } from "@/lib/utils";
 import {
-  Alert,
-  Avatar,
   Button,
   Checkbox,
   FormFieldGroup,
@@ -169,17 +167,6 @@ function Page(): JSX.Element {
         ))}
       </View>
       <Button onClick={showModal}>Show Modal</Button>
-
-      <Heading level="h2" as="h2">
-        Components
-      </Heading>
-      <View>
-        <Heading level="h3">Alert</Heading>
-        <Alert renderCloseButtonLabel="Close">
-          Sample info text. I will fade out if you close me.
-        </Alert>
-      </View>
-      <Avatar name="John Doe" />
     </View>
   );
 }
