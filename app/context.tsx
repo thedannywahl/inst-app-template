@@ -6,8 +6,8 @@ import {
   createContext,
   useContext,
   useEffect,
+  useLayoutEffect,
   useState,
-  useLayoutEffect
 } from "react";
 
 import {
@@ -111,14 +111,17 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    * @todo: store selected theme in localStorage
    */
   const applyTheme = (t: Theme): void => {
-    const newTheme = t === "system" ? "system" : t === "dark" ? "dark" : "light";
+    const newTheme =
+      t === "system" ? "system" : t === "dark" ? "dark" : "light";
 
     if (newTheme === "system") {
-      const prefersColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      const prefersColorScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      );
       if (prefersColorScheme.matches) {
-        setIsDark(true)
+        setIsDark(true);
       } else {
-        setIsDark(false)
+        setIsDark(false);
       }
     } else if (newTheme === "dark") {
       setIsDark(true);
@@ -134,13 +137,12 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   useLayoutEffect(() => {
     const prefersColorScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     );
     prefersColorScheme.addEventListener("change", (e) => {
-      applyTheme("system")
-    })
-
-  }, [applyTheme])
+      applyTheme("system");
+    });
+  }, [applyTheme]);
 
   /**
    * A mapping of valid UIs and their corresponding components.
@@ -188,13 +190,13 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    * useEffect hook for initial render.
    * @TODO: fix warning about exhaustive deps
    */
+  // biome-ignore lint/correctness/useExhaustiveDependencies: This is a run once fuction to set the initial theme.
   useEffect(() => {
-    console.log("run once.")
     const prefersColorScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     );
-    if (prefersColorScheme.matches) applyTheme("system")
-  }, [])
+    if (prefersColorScheme.matches) applyTheme("system");
+  }, []);
 
   // AppTray
 
@@ -290,8 +292,8 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   const [modalProps, setModalProps] = useState<
     | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-      label?: string;
-    })
+        label?: string;
+      })
     | undefined
   >(undefined);
 

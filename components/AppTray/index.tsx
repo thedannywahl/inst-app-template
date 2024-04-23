@@ -23,7 +23,10 @@ function LayoutAppTray(): JSX.Element {
    * const { Tray: AppTray } = useContexts();
    * ```
    */
-  const { Tray: AppTray, App: { isDark } } = useContexts();
+  const {
+    Tray: AppTray,
+    App: { isDark },
+  } = useContexts();
 
   /**
    * The header element for the AppTray component.

@@ -1,9 +1,17 @@
 "use client";
 
-import { Button, Checkbox, Heading, Text, View, RadioInput, RadioInputGroup } from "@instructure/ui";
+import {
+  Button,
+  Checkbox,
+  Heading,
+  RadioInput,
+  RadioInputGroup,
+  Text,
+  View,
+} from "@instructure/ui";
 import { useContexts } from "context";
-import type { Theme } from "types"
 import type { ChangeEvent } from "react";
+import type { Theme } from "types";
 
 /**
  * Renders the Page component.
@@ -25,14 +33,17 @@ function Page(): JSX.Element {
     });
   };
 
-  const handleThemeChange = (event: ChangeEvent<HTMLInputElement>, value: string) => {
+  const handleThemeChange = (
+    event: ChangeEvent<HTMLInputElement>,
+    value: string,
+  ) => {
     try {
-      App.applyTheme(value as Theme)
+      App.applyTheme(value as Theme);
     } catch (error) {
-      console.error(error)
-      console.error(event)
+      console.error(error);
+      console.error(event);
     }
-  }
+  };
 
   /**
    * Returns an array of key-value pairs from the given object.
@@ -92,12 +103,7 @@ function Page(): JSX.Element {
       theme: {App.theme}
       <br />
       <br />
-      <Checkbox
-        id="theme"
-        label="Remember my choice"
-        variant="toggle"
-      />{" "}
-      <br />
+      <Checkbox id="theme" label="Remember my choice" variant="toggle" /> <br />
       <br />
       <Text as="span" color="danger">
         *experimental

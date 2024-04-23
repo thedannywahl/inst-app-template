@@ -5,7 +5,10 @@ import { CloseButton, Heading, Modal } from "@instructure/ui";
  * Function to render the application modal.
  */
 function LayoutAppModal(): JSX.Element {
-  const { Modal: AppModal, App: { isDark } } = useContexts();
+  const {
+    Modal: AppModal,
+    App: { isDark },
+  } = useContexts();
 
   /**
    * Function to handle the click event of the close button.
