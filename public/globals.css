@@ -2,6 +2,8 @@
   --standard-colors-fire: #FC5E13;
   --standard-colors-licorice: #2D3B45;
   --standard-colors-white: #FFF;
+  --dark-standard-brand: #0489D5;
+  --dark-highcontrast-brand: #037abf;
 }
 
 body {
@@ -15,10 +17,10 @@ body {
 
 
 /* - BaseButton */
-
 .dark [data-cid*="BaseButton"]::before {
   border-color: var(--standard-colors-white);
 }
+
 
 /* - Modal */
 
