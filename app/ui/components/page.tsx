@@ -618,6 +618,16 @@ function Page(): JSX.Element {
           </Breadcrumb>
         </View>
       </View>
+
+      <View display="block" margin="large 0">
+        <Heading level="h3" id="basebutton">
+          Button
+        </Heading>
+
+        <View display="block" padding="small 0">
+          ...
+        </View>
+      </View>
     </View>
   );
 }
