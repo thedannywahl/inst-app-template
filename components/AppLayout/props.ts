@@ -10,6 +10,7 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
   const black = "#000";
 
   const darkHighContrastBrand = "#037abf";
+  const darkHighContrastBrandHover = "#038ede"
   const darkHighContrastShamrock = standard.colors.shamrock;
   const darkHighContrastCrimson = "#eb0621";
   const darkHighContrastFire = standard.colors.fire;
@@ -104,6 +105,30 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             colorPrimary: isDark ? darkStandardBrand : standard.colors.textInfo,
           },
           BaseButton: {
+            primaryColor: standard.colors.textLightest,
+            primaryBorderColor: isDark
+              ? darkOxfordBrand
+              : "rgb(2, 84, 131)",
+            primaryBackground: isDark
+              ? darkStandardBrand
+              : standard.colors.backgroundBrand,
+            primaryHoverBackground: isDark
+              ? darkOxfordBrand
+              : "rgb(2, 84, 131)",
+            primaryActiveBackground: isDark
+              ? darkOxfordBrand
+              : "rgb(2, 84, 131)",
+            primaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? standard.colors.brand : "rgb(1, 52, 81)"}`,
+            primaryGhostColor: isDark
+              ? darkStandardBrand
+              : standard.colors.backgroundBrand,
+            primaryGhostBorderColor: isDark
+              ? darkStandardBrand
+              : standard.colors.backgroundBrand,
+            primaryGhostBackground: "transparent",
+            primaryGhostHoverBackground: "rgba(3, 116, 181, 0.1)",
+            primaryGhostActiveBackground: "transparent",
+            primaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? darkOxfordBrand : "rgba(3, 116, 181, 0.28)"}`,
             secondaryColor: standard.colors.textDarkest,
             secondaryBorderColor: "rgb(219, 219, 219)",
             secondaryBackground: standard.colors.backgroundLight,
@@ -113,9 +138,8 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             secondaryActiveBackground: isDark
               ? standard.colors.backgroundLightest
               : "rgb(219, 219, 219)",
-            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
-              isDark ? "rgb(191, 191, 191)" : "rgb(194, 194, 194)"
-            }`,
+            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgb(191, 191, 191)" : "rgb(194, 194, 194)"
+              }`,
             secondaryGhostColor: isDark
               ? standard.colors.textLightest
               : standard.colors.textDarkest,
@@ -127,9 +151,8 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
               ? "rgba(255, 255, 255, 0.1)"
               : "rgba(45, 59, 69, 0.1)",
             secondaryGhostActiveBackground: "transparent",
-            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
-              isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
-            }`,
+            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
+              }`,
           },
           Billboard: {
             iconColor: isDark
@@ -158,6 +181,11 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
               ? standard.colors.textDarkest
               : standard.colors.textLight,
           },
+          Breadcrumb: {
+            separatorColor: isDark
+              ? darkStandardAsh
+              : standard.colors.textDark,
+          },
           FormFieldLabel: {
             color: isDark
               ? standard.colors.textLight
@@ -167,6 +195,26 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             color: isDark
               ? standard.colors.textLight
               : standard.colors.textDarkest,
+          },
+          Link: {
+            color: isDark
+              ? darkStandardBrand
+              : standard.colors.textLink,
+            focusOutlineColor: isDark
+              ? darkStandardBrand
+              : standard.colors.textLink,
+            hoverColor: isDark
+              ? darkOxfordBrand
+              : "rgb(2, 84, 131)",
+            colorInverse: isDark
+              ? standard.colors.textLight
+              : standard.colors.textLight,
+            focusInverseOutlineColor: isDark
+              ? standard.colors.textLight
+              : standard.colors.textLight,
+            focusInverseIconOutlineColor: isDark
+              ? standard.colors.textLight
+              : standard.colors.textLight
           },
           Modal: {
             borderColor: isDark
@@ -312,6 +360,30 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
               : highContrast.colors.textInfo,
           },
           BaseButton: {
+            primaryColor: highContrast.colors.textLightest,
+            primaryBorderColor: isDark
+              ? darkHighContrastBrandHover
+              : "rgb(5, 78, 114)",
+            primaryBackground: isDark
+              ? darkHighContrastBrand
+              : highContrast.colors.backgroundBrand,
+            primaryHoverBackground: isDark
+              ? darkHighContrastBrandHover
+              : "rgb(5, 78, 114)",
+            primaryActiveBackground: isDark
+              ? darkHighContrastBrandHover
+              : "rgb(5, 78, 114)",
+            primaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? highContrast.colors.backgroundBrand : "rgb(3, 45, 65)"}`,
+            primaryGhostColor: isDark
+              ? darkHighContrastBrand
+              : highContrast.colors.backgroundBrand,
+            primaryGhostBorderColor: isDark
+              ? darkHighContrastBrand
+              : highContrast.colors.backgroundBrand,
+            primaryGhostBackground: "transparent",
+            primaryGhostHoverBackground: "rgba(7, 112, 163, 0.1)",
+            primaryGhostActiveBackground: "transparent",
+            primaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? darkHighContrastBrandHover : "rgba(7, 112, 163, 0.28)"}`,
             secondaryColor: highContrast.colors.textDarkest,
             secondaryBorderColor: highContrast.colors.borderDark,
             secondaryBackground: highContrast.colors.backgroundLight,
@@ -321,9 +393,8 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             secondaryActiveBackground: isDark
               ? highContrast.colors.backgroundLight
               : "rgb(230, 230, 230)",
-            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
-              isDark ? "rgb(191, 191, 191)" : "rgb(230, 230, 230)"
-            }`,
+            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgb(191, 191, 191)" : "rgb(230, 230, 230)"
+              }`,
             secondaryGhostColor: isDark
               ? highContrast.colors.textLightest
               : black,
@@ -335,9 +406,8 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
               ? "rgba(255, 255, 255, 0.1)"
               : "rgba(45, 59, 69, 0.1)",
             secondaryGhostActiveBackground: "transparent",
-            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
-              isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
-            }`,
+            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
+              }`,
           },
           Billboard: {
             iconColor: isDark
@@ -364,11 +434,36 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
               : highContrast.colors.backgroundInfo,
             clickableActiveText: isDark ? black : highContrast.colors.textLight,
           },
+          Breadcrumb: {
+            separatorColor: isDark
+              ? darkHighContrastAsh
+              : highContrast.colors.textDark,
+          },
           FormFieldLabel: {
             color: isDark ? highContrast.colors.textLightest : black,
           },
           FormFieldMessage: {
             color: isDark ? highContrast.colors.textLightest : black,
+          },
+          Link: {
+            color: isDark
+              ? darkHighContrastBrand
+              : highContrast.colors.textLink,
+            focusOutlineColor: isDark
+              ? darkHighContrastBrand
+              : standard.colors.textLink,
+            hoverColor: isDark
+              ? darkOxfordBrand
+              : "rgb(5, 78, 114)",
+            colorInverse: isDark
+              ? highContrast.colors.textLight
+              : highContrast.colors.textLight,
+            focusInverseOutlineColor: isDark
+              ? highContrast.colors.textLight
+              : highContrast.colors.textLight,
+            focusInverseIconOutlineColor: isDark
+              ? highContrast.colors.textLight
+              : highContrast.colors.textLight
           },
           Modal: {
             inverseBackground: black,

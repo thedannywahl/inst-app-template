@@ -5,8 +5,9 @@ import {
   Alert,
   Avatar,
   Badge,
-  Billboard,
+  BaseButton,
   Button,
+  Billboard,
   Checkbox,
   Flex,
   FormFieldGroup,
@@ -21,11 +22,17 @@ import {
   RadioInput,
   RadioInputGroup,
   ScreenReaderContent,
+  Breadcrumb,
+  Responsive,
+  Link,
+  IconArrowOpenStartLine,
+  TruncateText,
   View,
 } from "@instructure/ui";
 import { useContexts } from "context";
 import type { ChangeEvent } from "react";
 import type { Theme } from "types";
+import { red } from "ansis";
 
 function Page(): JSX.Element {
   const { App, Tray, Modal } = useContexts();
@@ -37,8 +44,8 @@ function Page(): JSX.Element {
     try {
       App.applyTheme(value as Theme);
     } catch (error) {
-      console.error(error);
-      console.error(event);
+      console.error(red`Error:`, error);
+      console.error(red`Error:`, event);
     }
   };
 
@@ -325,6 +332,58 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
+        <Heading level="h3" id="basebutton">BaseButton</Heading>
+        <View display="block" padding="small 0">
+          <BaseButton margin="0 small 0 0" size="small">Click me</BaseButton>
+          <BaseButton renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
+          <BaseButton margin="small" size="large" withBackground={false}>No background</BaseButton>
+          <BaseButton margin="small" withBorder={false}>No border</BaseButton>
+          <BaseButton margin="small" shape="circle" renderIcon={IconPlusLine} />
+          <BaseButton margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+        </View>
+        <View display="block" padding="small 0">
+          <BaseButton color="primary" margin="0 small 0 0" size="small">Click me</BaseButton>
+          <BaseButton color="primary" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
+          <BaseButton color="primary" margin="small" size="large" withBackground={false}>No background</BaseButton>
+          <BaseButton color="primary" margin="small" withBorder={false}>No border</BaseButton>
+          <BaseButton color="primary" margin="small" shape="circle" renderIcon={IconPlusLine} />
+          <BaseButton color="primary" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+        </View>
+        <View display="block" padding="small 0">
+          <BaseButton color="primary-inverse" margin="0 small 0 0" size="small">Click me</BaseButton>
+          <BaseButton color="primary-inverse" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
+          <BaseButton color="primary-inverse" margin="small" size="large" withBackground={false}>No background</BaseButton>
+          <BaseButton color="primary-inverse" margin="small" withBorder={false}>No border</BaseButton>
+          <BaseButton color="primary-inverse" margin="small" shape="circle" renderIcon={IconPlusLine} />
+          <BaseButton color="primary-inverse" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+        </View>
+        <View display="block" padding="small 0">
+          <BaseButton color="secondary" margin="0 small 0 0" size="small">Click me</BaseButton>
+          <BaseButton color="secondary" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
+          <BaseButton color="secondary" margin="small" size="large" withBackground={false}>No background</BaseButton>
+          <BaseButton color="secondary" margin="small" withBorder={false}>No border</BaseButton>
+          <BaseButton color="secondary" margin="small" shape="circle" renderIcon={IconPlusLine} />
+          <BaseButton color="secondary" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+        </View>
+        <View display="block" padding="small 0">
+          <BaseButton color="success" margin="0 small 0 0" size="small">Click me</BaseButton>
+          <BaseButton color="success" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
+          <BaseButton color="success" margin="small" size="large" withBackground={false}>No background</BaseButton>
+          <BaseButton color="success" margin="small" withBorder={false}>No border</BaseButton>
+          <BaseButton color="success" margin="small" shape="circle" renderIcon={IconPlusLine} />
+          <BaseButton color="success" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+        </View>
+        <View display="block" padding="small 0">
+          <BaseButton color="danger" margin="0 small 0 0" size="small">Click me</BaseButton>
+          <BaseButton color="danger" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
+          <BaseButton color="danger" margin="small" size="large" withBackground={false}>No background</BaseButton>
+          <BaseButton color="danger" margin="small" withBorder={false}>No border</BaseButton>
+          <BaseButton color="danger" margin="small" shape="circle" renderIcon={IconPlusLine} />
+          <BaseButton color="danger" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+        </View>
+      </View>
+
+      <View display="block" margin="large 0">
         <Heading level="h3" id="billboard">
           Billboard
         </Heading>
@@ -361,6 +420,19 @@ function Page(): JSX.Element {
           />
         </View>
       </View>
+
+      <View display="block" margin="large 0">
+        <Heading level="h3" id="breadcrumb">Breadcrumb</Heading>
+        <View display="block" padding="small 0">
+          <Breadcrumb label="You are here:">
+            <Breadcrumb.Link href="#breadcrumb">Student Forecast</Breadcrumb.Link>
+            <Breadcrumb.Link href="#breadcrumb">University of Utah</Breadcrumb.Link>
+            <Breadcrumb.Link href="#breadcrumb">University of Utah Colleges</Breadcrumb.Link>
+            <Breadcrumb.Link>This is the current page</Breadcrumb.Link>
+          </Breadcrumb>
+        </View>
+      </View>
+
     </View>
   );
 }
