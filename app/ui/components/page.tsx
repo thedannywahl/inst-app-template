@@ -6,12 +6,14 @@ import {
   Avatar,
   Badge,
   BaseButton,
-  Button,
   Billboard,
+  Breadcrumb,
+  Button,
   Checkbox,
   Flex,
   FormFieldGroup,
   Heading,
+  IconArrowOpenStartLine,
   IconButton,
   IconGradebookLine,
   IconGroupLine,
@@ -19,20 +21,18 @@ import {
   IconUserLine,
   IconUserSolid,
   Img,
+  Link,
   RadioInput,
   RadioInputGroup,
-  ScreenReaderContent,
-  Breadcrumb,
   Responsive,
-  Link,
-  IconArrowOpenStartLine,
+  ScreenReaderContent,
   TruncateText,
   View,
 } from "@instructure/ui";
+import { red } from "ansis";
 import { useContexts } from "context";
 import type { ChangeEvent } from "react";
 import type { Theme } from "types";
-import { red } from "ansis";
 
 function Page(): JSX.Element {
   const { App, Tray, Modal } = useContexts();
@@ -91,7 +91,9 @@ function Page(): JSX.Element {
       </Heading>
 
       <View display="block" margin="large 0">
-        <Heading level="h3" id="alert">Alert</Heading>
+        <Heading level="h3" id="alert">
+          Alert
+        </Heading>
         <View display="block" padding="small 0">
           <Alert variant="info" renderCloseButtonLabel="Close">
             Info Alert (default)
@@ -107,7 +109,9 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
-        <Heading level="h3" id="avatar">Avatar</Heading>
+        <Heading level="h3" id="avatar">
+          Avatar
+        </Heading>
         <View display="block" padding="small 0">
           <Avatar name="John Doe" margin="0 medium 0 0" />
           <Avatar
@@ -213,7 +217,9 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
-        <Heading level="h3" id="badge">Badge</Heading>
+        <Heading level="h3" id="badge">
+          Badge
+        </Heading>
         <View display="block" padding="small 0">
           <Badge count={105} countUntil={100} margin="0 medium 0 0">
             <Button>Inbox</Button>
@@ -332,54 +338,226 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
-        <Heading level="h3" id="basebutton">BaseButton</Heading>
+        <Heading level="h3" id="basebutton">
+          BaseButton
+        </Heading>
         <View display="block" padding="small 0">
-          <BaseButton margin="0 small 0 0" size="small">Click me</BaseButton>
-          <BaseButton renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
-          <BaseButton margin="small" size="large" withBackground={false}>No background</BaseButton>
-          <BaseButton margin="small" withBorder={false}>No border</BaseButton>
+          <BaseButton margin="0 small 0 0" size="small">
+            Click me
+          </BaseButton>
+          <BaseButton renderIcon={IconPlusLine} size="medium" margin="small">
+            With icon
+          </BaseButton>
+          <BaseButton margin="small" size="large" withBackground={false}>
+            No background
+          </BaseButton>
+          <BaseButton margin="small" withBorder={false}>
+            No border
+          </BaseButton>
           <BaseButton margin="small" shape="circle" renderIcon={IconPlusLine} />
-          <BaseButton margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+          <BaseButton
+            margin="small"
+            isCondensed={true}
+            withBorder={false}
+            withBackground={false}
+          >
+            Condensed
+          </BaseButton>
         </View>
         <View display="block" padding="small 0">
-          <BaseButton color="primary" margin="0 small 0 0" size="small">Click me</BaseButton>
-          <BaseButton color="primary" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
-          <BaseButton color="primary" margin="small" size="large" withBackground={false}>No background</BaseButton>
-          <BaseButton color="primary" margin="small" withBorder={false}>No border</BaseButton>
-          <BaseButton color="primary" margin="small" shape="circle" renderIcon={IconPlusLine} />
-          <BaseButton color="primary" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+          <BaseButton color="primary" margin="0 small 0 0" size="small">
+            Click me
+          </BaseButton>
+          <BaseButton
+            color="primary"
+            renderIcon={IconPlusLine}
+            size="medium"
+            margin="small"
+          >
+            With icon
+          </BaseButton>
+          <BaseButton
+            color="primary"
+            margin="small"
+            size="large"
+            withBackground={false}
+          >
+            No background
+          </BaseButton>
+          <BaseButton color="primary" margin="small" withBorder={false}>
+            No border
+          </BaseButton>
+          <BaseButton
+            color="primary"
+            margin="small"
+            shape="circle"
+            renderIcon={IconPlusLine}
+          />
+          <BaseButton
+            color="primary"
+            margin="small"
+            isCondensed={true}
+            withBorder={false}
+            withBackground={false}
+          >
+            Condensed
+          </BaseButton>
         </View>
         <View display="block" padding="small 0">
-          <BaseButton color="primary-inverse" margin="0 small 0 0" size="small">Click me</BaseButton>
-          <BaseButton color="primary-inverse" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
-          <BaseButton color="primary-inverse" margin="small" size="large" withBackground={false}>No background</BaseButton>
-          <BaseButton color="primary-inverse" margin="small" withBorder={false}>No border</BaseButton>
-          <BaseButton color="primary-inverse" margin="small" shape="circle" renderIcon={IconPlusLine} />
-          <BaseButton color="primary-inverse" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+          <BaseButton color="primary-inverse" margin="0 small 0 0" size="small">
+            Click me
+          </BaseButton>
+          <BaseButton
+            color="primary-inverse"
+            renderIcon={IconPlusLine}
+            size="medium"
+            margin="small"
+          >
+            With icon
+          </BaseButton>
+          <BaseButton
+            color="primary-inverse"
+            margin="small"
+            size="large"
+            withBackground={false}
+          >
+            No background
+          </BaseButton>
+          <BaseButton color="primary-inverse" margin="small" withBorder={false}>
+            No border
+          </BaseButton>
+          <BaseButton
+            color="primary-inverse"
+            margin="small"
+            shape="circle"
+            renderIcon={IconPlusLine}
+          />
+          <BaseButton
+            color="primary-inverse"
+            margin="small"
+            isCondensed={true}
+            withBorder={false}
+            withBackground={false}
+          >
+            Condensed
+          </BaseButton>
         </View>
         <View display="block" padding="small 0">
-          <BaseButton color="secondary" margin="0 small 0 0" size="small">Click me</BaseButton>
-          <BaseButton color="secondary" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
-          <BaseButton color="secondary" margin="small" size="large" withBackground={false}>No background</BaseButton>
-          <BaseButton color="secondary" margin="small" withBorder={false}>No border</BaseButton>
-          <BaseButton color="secondary" margin="small" shape="circle" renderIcon={IconPlusLine} />
-          <BaseButton color="secondary" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+          <BaseButton color="secondary" margin="0 small 0 0" size="small">
+            Click me
+          </BaseButton>
+          <BaseButton
+            color="secondary"
+            renderIcon={IconPlusLine}
+            size="medium"
+            margin="small"
+          >
+            With icon
+          </BaseButton>
+          <BaseButton
+            color="secondary"
+            margin="small"
+            size="large"
+            withBackground={false}
+          >
+            No background
+          </BaseButton>
+          <BaseButton color="secondary" margin="small" withBorder={false}>
+            No border
+          </BaseButton>
+          <BaseButton
+            color="secondary"
+            margin="small"
+            shape="circle"
+            renderIcon={IconPlusLine}
+          />
+          <BaseButton
+            color="secondary"
+            margin="small"
+            isCondensed={true}
+            withBorder={false}
+            withBackground={false}
+          >
+            Condensed
+          </BaseButton>
         </View>
         <View display="block" padding="small 0">
-          <BaseButton color="success" margin="0 small 0 0" size="small">Click me</BaseButton>
-          <BaseButton color="success" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
-          <BaseButton color="success" margin="small" size="large" withBackground={false}>No background</BaseButton>
-          <BaseButton color="success" margin="small" withBorder={false}>No border</BaseButton>
-          <BaseButton color="success" margin="small" shape="circle" renderIcon={IconPlusLine} />
-          <BaseButton color="success" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+          <BaseButton color="success" margin="0 small 0 0" size="small">
+            Click me
+          </BaseButton>
+          <BaseButton
+            color="success"
+            renderIcon={IconPlusLine}
+            size="medium"
+            margin="small"
+          >
+            With icon
+          </BaseButton>
+          <BaseButton
+            color="success"
+            margin="small"
+            size="large"
+            withBackground={false}
+          >
+            No background
+          </BaseButton>
+          <BaseButton color="success" margin="small" withBorder={false}>
+            No border
+          </BaseButton>
+          <BaseButton
+            color="success"
+            margin="small"
+            shape="circle"
+            renderIcon={IconPlusLine}
+          />
+          <BaseButton
+            color="success"
+            margin="small"
+            isCondensed={true}
+            withBorder={false}
+            withBackground={false}
+          >
+            Condensed
+          </BaseButton>
         </View>
         <View display="block" padding="small 0">
-          <BaseButton color="danger" margin="0 small 0 0" size="small">Click me</BaseButton>
-          <BaseButton color="danger" renderIcon={IconPlusLine} size="medium" margin="small">With icon</BaseButton>
-          <BaseButton color="danger" margin="small" size="large" withBackground={false}>No background</BaseButton>
-          <BaseButton color="danger" margin="small" withBorder={false}>No border</BaseButton>
-          <BaseButton color="danger" margin="small" shape="circle" renderIcon={IconPlusLine} />
-          <BaseButton color="danger" margin="small" isCondensed={true} withBorder={false} withBackground={false}>Condensed</BaseButton>
+          <BaseButton color="danger" margin="0 small 0 0" size="small">
+            Click me
+          </BaseButton>
+          <BaseButton
+            color="danger"
+            renderIcon={IconPlusLine}
+            size="medium"
+            margin="small"
+          >
+            With icon
+          </BaseButton>
+          <BaseButton
+            color="danger"
+            margin="small"
+            size="large"
+            withBackground={false}
+          >
+            No background
+          </BaseButton>
+          <BaseButton color="danger" margin="small" withBorder={false}>
+            No border
+          </BaseButton>
+          <BaseButton
+            color="danger"
+            margin="small"
+            shape="circle"
+            renderIcon={IconPlusLine}
+          />
+          <BaseButton
+            color="danger"
+            margin="small"
+            isCondensed={true}
+            withBorder={false}
+            withBackground={false}
+          >
+            Condensed
+          </BaseButton>
         </View>
       </View>
 
@@ -422,17 +600,24 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
-        <Heading level="h3" id="breadcrumb">Breadcrumb</Heading>
+        <Heading level="h3" id="breadcrumb">
+          Breadcrumb
+        </Heading>
         <View display="block" padding="small 0">
           <Breadcrumb label="You are here:">
-            <Breadcrumb.Link href="#breadcrumb">Student Forecast</Breadcrumb.Link>
-            <Breadcrumb.Link href="#breadcrumb">University of Utah</Breadcrumb.Link>
-            <Breadcrumb.Link href="#breadcrumb">University of Utah Colleges</Breadcrumb.Link>
+            <Breadcrumb.Link href="#breadcrumb">
+              Student Forecast
+            </Breadcrumb.Link>
+            <Breadcrumb.Link href="#breadcrumb">
+              University of Utah
+            </Breadcrumb.Link>
+            <Breadcrumb.Link href="#breadcrumb">
+              University of Utah Colleges
+            </Breadcrumb.Link>
             <Breadcrumb.Link>This is the current page</Breadcrumb.Link>
           </Breadcrumb>
         </View>
       </View>
-
     </View>
   );
 }

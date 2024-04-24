@@ -20,13 +20,13 @@ export const InstUI: React.FC<Children> = ({
   children,
 }: { children?: React.ReactNode }): JSX.Element => {
   const {
-    App: { ui, theme, isDark },
+    App: { ui, theme, isDark, isHighContrast },
   } = useContexts();
 
   const counter: Map<string, number> = generateInstanceCounterMap();
   counter.set("App", 0);
 
-  const InstUI = ThemeOverrides(isDark);
+  const InstUI = ThemeOverrides(isDark, isHighContrast);
 
   return (
     <InstUISettingsProvider theme={InstUI} instanceCounterMap={counter}>
