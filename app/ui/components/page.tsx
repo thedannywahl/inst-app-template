@@ -84,7 +84,7 @@ function Page(): JSX.Element {
       </Heading>
 
       <View display="block" margin="large 0">
-        <Heading level="h3">Alert</Heading>
+        <Heading level="h3" id="alert">Alert</Heading>
         <View display="block" padding="small 0">
           <Alert variant="info" renderCloseButtonLabel="Close">
             Info Alert (default)
@@ -100,7 +100,7 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
-        <Heading level="h3">Avatar</Heading>
+        <Heading level="h3" id="avatar">Avatar</Heading>
         <View display="block" padding="small 0">
           <Avatar name="John Doe" margin="0 medium 0 0" />
           <Avatar
@@ -206,7 +206,7 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
-        <Heading level="h3">Badge</Heading>
+        <Heading level="h3" id="badge">Badge</Heading>
         <View display="block" padding="small 0">
           <Badge count={105} countUntil={100} margin="0 medium 0 0">
             <Button>Inbox</Button>
