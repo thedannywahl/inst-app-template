@@ -1,24 +1,27 @@
 "use client";
 
 import {
-  Button,
-  Flex,
-  RadioInputGroup,
-  RadioInput,
-  Checkbox,
-  FormFieldGroup,
-  Heading,
-  View,
+  AccessibleContent,
   Alert,
   Avatar,
+  Badge,
+  Billboard,
+  Button,
+  Checkbox,
+  Flex,
+  FormFieldGroup,
+  Heading,
+  IconButton,
+  IconGradebookLine,
+  IconGroupLine,
+  IconPlusLine,
   IconUserLine,
   IconUserSolid,
-  IconGroupLine,
-  AccessibleContent,
-  IconButton,
-  Badge,
+  Img,
+  RadioInput,
+  RadioInputGroup,
   ScreenReaderContent,
-  Billboard,
+  View,
 } from "@instructure/ui";
 import { useContexts } from "context";
 import type { ChangeEvent } from "react";
@@ -322,9 +325,40 @@ function Page(): JSX.Element {
       </View>
 
       <View display="block" margin="large 0">
-        <Heading level="h3">Billboard</Heading>
+        <Heading level="h3" id="billboard">
+          Billboard
+        </Heading>
         <View display="block" padding="small 0">
-          <Billboard />
+          <Billboard
+            margin="large"
+            size="medium"
+            message="Click this link"
+            href="#billboard"
+            hero={(size) => <IconGradebookLine size={size} />}
+          />
+          <Billboard
+            readOnly
+            margin="large"
+            message="Create a new Module"
+            size="large"
+            onClick={() => {
+              alert("This Billboard was clicked!");
+            }}
+            hero={(size) => <IconPlusLine size={size} />}
+          />
+          <Billboard
+            margin="large"
+            size="small"
+            heading="Well, this is awkward."
+            message="Think there should be something here?"
+            hero={<IconGroupLine />}
+          />
+          <Billboard
+            size="small"
+            heading="This is disabled"
+            hero={(size) => <IconUserLine size={size} />}
+            disabled
+          />
         </View>
       </View>
     </View>

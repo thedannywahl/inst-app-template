@@ -24,7 +24,7 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
   const darkStandardBarney = "#d14fb8";
   const darkStandardAsh = "#78858e";
 
-  const darkOxfordInfo = "#059bf2";
+  const darkOxfordBrand = "#059bf2";
   const darkOxfordShamrock = "#1aae26";
   const darkOxfordCrimson = "#ff5e5e";
   const darkOxfordFire = "#fc661f";
@@ -78,7 +78,7 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             boxShadowColor: isDark
               ? "rgba(255, 255, 255, 0.28)"
               : "rgba(45, 59, 69, 0.12)",
-            color: isDark ? darkOxfordInfo : standard.colors.textInfo,
+            color: isDark ? darkOxfordBrand : standard.colors.textInfo,
             colorShamrock: isDark
               ? darkOxfordShamrock
               : standard.colors.textSuccess,
@@ -113,8 +113,9 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             secondaryActiveBackground: isDark
               ? standard.colors.backgroundLightest
               : "rgb(219, 219, 219)",
-            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgb(191, 191, 191)" : "rgb(194, 194, 194)"
-              }`,
+            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
+              isDark ? "rgb(191, 191, 191)" : "rgb(194, 194, 194)"
+            }`,
             secondaryGhostColor: isDark
               ? standard.colors.textLightest
               : standard.colors.textDarkest,
@@ -126,8 +127,36 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
               ? "rgba(255, 255, 255, 0.1)"
               : "rgba(45, 59, 69, 0.1)",
             secondaryGhostActiveBackground: "transparent",
-            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
-              }`,
+            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
+              isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
+            }`,
+          },
+          Billboard: {
+            iconColor: isDark
+              ? standard.colors.textLightest
+              : standard.colors.textDark,
+            iconHoverColor: isDark ? darkOxfordBrand : standard.colors.textInfo,
+            backgroundColor: isDark
+              ? darkStandardOxford
+              : standard.colors.backgroundLight,
+            iconHoverColorInverse: isDark
+              ? standard.colors.textDarkest
+              : standard.colors.textLight,
+            messageColor: isDark
+              ? standard.colors.textLightest
+              : standard.colors.textDark,
+            messageColorClickable: isDark
+              ? darkOxfordBrand
+              : standard.colors.textInfo,
+            messageColorInverse: isDark
+              ? standard.colors.textDarkest
+              : standard.colors.textLight,
+            clickableActiveBg: isDark
+              ? darkOxfordBrand
+              : standard.colors.backgroundInfo,
+            clickableActiveText: isDark
+              ? standard.colors.textDarkest
+              : standard.colors.textLight,
           },
           FormFieldLabel: {
             color: isDark
@@ -292,8 +321,9 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
             secondaryActiveBackground: isDark
               ? highContrast.colors.backgroundLight
               : "rgb(230, 230, 230)",
-            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgb(191, 191, 191)" : "rgb(230, 230, 230)"
-              }`,
+            secondaryActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
+              isDark ? "rgb(191, 191, 191)" : "rgb(230, 230, 230)"
+            }`,
             secondaryGhostColor: isDark
               ? highContrast.colors.textLightest
               : black,
@@ -305,8 +335,34 @@ const ThemeOverrides = (isDark: boolean): ThemeOrOverride | undefined => {
               ? "rgba(255, 255, 255, 0.1)"
               : "rgba(45, 59, 69, 0.1)",
             secondaryGhostActiveBackground: "transparent",
-            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
-              }`,
+            secondaryGhostActiveBoxShadow: `inset 0 0 0.1875rem 0.0625rem ${
+              isDark ? "rgba(255, 255, 255, 0.28)" : "rgba(45, 59, 69, 0.28)"
+            }`,
+          },
+          Billboard: {
+            iconColor: isDark
+              ? highContrast.colors.textLightest
+              : highContrast.colors.textDark,
+            iconHoverColor: isDark
+              ? darkHighContrastBrand
+              : standard.colors.textInfo,
+            backgroundColor: isDark
+              ? black
+              : highContrast.colors.backgroundLight,
+            iconHoverColorInverse: isDark
+              ? black
+              : highContrast.colors.textLight,
+            messageColor: isDark
+              ? highContrast.colors.textLightest
+              : highContrast.colors.textDark,
+            messageColorClickable: isDark
+              ? darkHighContrastBrand
+              : highContrast.colors.textInfo,
+            messageColorInverse: isDark ? black : highContrast.colors.textLight,
+            clickableActiveBg: isDark
+              ? darkHighContrastBrand
+              : highContrast.colors.backgroundInfo,
+            clickableActiveText: isDark ? black : highContrast.colors.textLight,
           },
           FormFieldLabel: {
             color: isDark ? highContrast.colors.textLightest : black,

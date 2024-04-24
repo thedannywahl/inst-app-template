@@ -17,10 +17,20 @@ body {
 
 
 /* - BaseButton */
+
 .dark [data-cid*="BaseButton"]::before {
   border-color: var(--standard-colors-white);
 }
 
+/* - Billboard */
+
+/* @NOTE: Billboard does not provide an interface to
+ * override the color of the Heading text.
+ */
+
+.dark [class$="billboard__heading"]>[class$="view-heading"] {
+  color: var(--standard-colors-white);
+}
 
 /* - Modal */
 
