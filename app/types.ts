@@ -16,15 +16,15 @@ export type Children = {
 // Modal
 export type ModalProps =
   | {
-      modal:
-        | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-            label?: string;
-          })
-        | undefined;
-      header?: ComponentProps<typeof Modal.Header>;
-      body?: ComponentProps<typeof Modal.Body>;
-      footer?: ComponentProps<typeof Modal.Footer>;
-    }
+    modal:
+    | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
+      label?: string;
+    })
+    | undefined;
+    header?: ComponentProps<typeof Modal.Header>;
+    body?: ComponentProps<typeof Modal.Body>;
+    footer?: ComponentProps<typeof Modal.Footer>;
+  }
   | undefined;
 
 export type ShowModal = (
@@ -47,6 +47,8 @@ export type ShowTray = (
 
 // App
 export type Theme = "light" | "dark" | "system";
+
+export type Mode = "light" | "dark";
 
 export type ValidUI = {
   standard: typeof Standard;
@@ -96,9 +98,16 @@ export interface Context {
      * Represents the theme of the application.
      *
      * @default "light"
-     * @example "dark"
+     * @example "system"
      */
     theme: Theme;
+
+    /**
+     * Represents the display mode of the application.
+     * @default "light"
+     * @example "dark"
+     */
+    mode: Mode;
 
     /**
      * Represents the user interface of the application.

@@ -1,4 +1,5 @@
 import type { ThemeOrOverride } from "@instructure/emotion/types/EmotionTypes";
+import type { UI, Mode } from "types";
 import alertOverrides from "./themeOverrides/alert";
 import avatarOverrides from "./themeOverrides/avatar";
 import badgeOverrides from "./themeOverrides/badge";
@@ -23,29 +24,29 @@ import trayOverrides from "./themeOverrides/tray";
 import viewOverrides from "./themeOverrides/view";
 
 const ThemeOverrides = (
-  isDark: boolean,
-  isHighContrast: boolean,
+  mode: Mode,
+  ui: UI,
 ): ThemeOrOverride | undefined => {
   return {
     componentOverrides: {
-      Alert: alertOverrides(isDark, isHighContrast),
-      Avatar: avatarOverrides(isDark, isHighContrast),
-      Badge: badgeOverrides(isDark, isHighContrast),
-      BaseButton: baseButtonOverrides(isDark, isHighContrast),
-      Billboard: billboardOverrides(isDark, isHighContrast),
-      Breadcrumb: breadcrumbOverrides(isDark, isHighContrast),
-      FormFieldLabel: formFieldLabelOverrides(isDark, isHighContrast),
-      FormFieldMessage: formFieldMessageOverrides(isDark, isHighContrast),
-      Link: linkOverrides(isDark, isHighContrast),
-      Modal: modalOverrides(isDark, isHighContrast),
-      "Modal.Body": modalBodyOverrides(isDark, isHighContrast),
-      "Modal.Footer": modalFooterOverrides(isDark, isHighContrast),
-      "Modal.Header": modalHeaderOverrides(isDark, isHighContrast),
-      RadioInput: radioInputOverrides(isDark, isHighContrast),
-      ToggleFacade: toggleFacadeOverrides(isDark, isHighContrast),
-      TopNavBarLayout: topNavBarLayoutOverrides(isDark, isHighContrast),
-      Tray: trayOverrides(isDark, isHighContrast),
-      View: viewOverrides(isDark, isHighContrast),
+      Alert: alertOverrides(ui, mode),
+      Avatar: avatarOverrides(ui, mode),
+      Badge: badgeOverrides(ui, mode),
+      BaseButton: baseButtonOverrides(ui, mode),
+      Billboard: billboardOverrides(ui, mode),
+      Breadcrumb: breadcrumbOverrides(ui, mode),
+      FormFieldLabel: formFieldLabelOverrides(ui, mode),
+      FormFieldMessage: formFieldMessageOverrides(ui, mode),
+      Link: linkOverrides(ui, mode),
+      Modal: modalOverrides(ui, mode),
+      "Modal.Body": modalBodyOverrides(ui, mode),
+      "Modal.Footer": modalFooterOverrides(ui, mode),
+      "Modal.Header": modalHeaderOverrides(ui, mode),
+      RadioInput: radioInputOverrides(ui, mode),
+      ToggleFacade: toggleFacadeOverrides(ui, mode),
+      TopNavBarLayout: topNavBarLayoutOverrides(ui, mode),
+      Tray: trayOverrides(ui, mode),
+      View: viewOverrides(ui, mode),
     },
     themeOverrides: {
       canvas: {

@@ -20,13 +20,13 @@ export const InstUI: React.FC<Children> = ({
   children,
 }: { children?: React.ReactNode }): JSX.Element => {
   const {
-    App: { ui, theme, isDark, isHighContrast },
+    App: { ui, theme, mode },
   } = useContexts();
 
   const counter: Map<string, number> = generateInstanceCounterMap();
   counter.set("App", 0);
 
-  const InstUI = ThemeOverrides(isDark, isHighContrast);
+  const InstUI = ThemeOverrides(mode, ui);
 
   return (
     <InstUISettingsProvider theme={InstUI} instanceCounterMap={counter}>
@@ -36,9 +36,10 @@ export const InstUI: React.FC<Children> = ({
         position="relative"
         margin="0"
         padding="0"
-        className={`${isDark ? "dark" : "light"} ${ui}`}
+        className={`${mode} ${ui}`}
         data-theme={theme}
         data-ui={ui}
+        data-mode={mode}
         background="primary"
       >
         <AppNav />

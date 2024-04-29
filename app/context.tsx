@@ -24,6 +24,7 @@ import type {
   Theme,
   TrayProps,
   UI,
+  Mode,
   ValidUI,
 } from "types";
 
@@ -99,6 +100,8 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   const [theme, setTheme] = useState<Theme>("system");
 
+  const [mode, setMode] = useState<Mode>("light");
+
   /**
    * Represents the state of the dark mode.
    */
@@ -120,13 +123,17 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
       );
       if (prefersColorScheme.matches) {
         setIsDark(true);
+        setMode("dark");
       } else {
         setIsDark(false);
+        setMode("light");
       }
     } else if (newTheme === "dark") {
       setIsDark(true);
+      setMode("dark");
     } else {
       setIsDark(false);
+      setMode("light");
     }
     setTheme(newTheme);
     validUIs[ui].use();
@@ -292,8 +299,8 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   const [modalProps, setModalProps] = useState<
     | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-        label?: string;
-      })
+      label?: string;
+    })
     | undefined
   >(undefined);
 
@@ -395,6 +402,7 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
           applyTheme,
           isInFrame,
           theme,
+          mode,
           validThemes,
           ui,
           validUIs,
