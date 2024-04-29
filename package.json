@@ -6,6 +6,7 @@
     "dev": "dotenvx run --convention=nextjs -- next dev --turbo",
     "build": "dotenvx run --convention=nextjs -- next build",
     "start": "dotenvx run --convention=nextjs -- next start",
+    "biome": "pnpm lint && pnpm check && pnpm format",
     "lint": "biome lint ./",
     "check": "biome check --apply ./",
     "format": "biome format --write ./",
