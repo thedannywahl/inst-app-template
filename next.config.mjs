@@ -28,9 +28,6 @@ const nextConfig = withMDX()({
     buildActivity: true,
     buildActivityPosition: "bottom-right",
   },
-  compiler: {
-    emotion: true,
-  },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   reactStrictMode: true,
 });

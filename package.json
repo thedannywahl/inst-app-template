@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenvx run --convention=nextjs -- next dev",
+    "dev": "dotenvx run --convention=nextjs -- next dev --turbo",
     "build": "dotenvx run --convention=nextjs -- next build",
     "start": "dotenvx run --convention=nextjs -- next start",
     "lint": "biome lint ./",
