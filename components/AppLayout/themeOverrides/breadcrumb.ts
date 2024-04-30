@@ -1,23 +1,10 @@
-import {
-  canvasHighContrast as highContrast,
-  canvas as standard,
-} from "@instructure/ui";
-import * as colorOverrides from "./colors";
+import type { Mode, UI } from "types";
+import { colors } from "../themeOverrides";
 
-const breadcrumbOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    separatorColor: isDark
-      ? colorOverrides.darkStandardAsh
-      : standard.colors.textDark,
+const breadcrumbOverrides = (mode: Mode, ui: UI) => {
+  return {
+    separatorColor: colors[ui][mode].text.dark,
   };
-
-  const highContrastThemeOverride = {
-    separatorColor: isDark
-      ? colorOverrides.darkHighContrastAsh
-      : highContrast.colors.textDark,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
 export default breadcrumbOverrides;
