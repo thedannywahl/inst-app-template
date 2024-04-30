@@ -46,6 +46,7 @@ const colors = {
       },
       background: {
         darkest: standard.colors.licorice,
+        darker: standard.colors.oxford,
         dark: standard.colors.ash,
         medium: standard.colors.tiara,
         light: standard.colors.porcelain,
@@ -127,6 +128,9 @@ const colors = {
       background: {
         get darkest() {
           return colors.standard.dark.licorice;
+        },
+        get darker() {
+          return colors.standard.dark.oxford;
         },
         get dark() {
           return colors.standard.dark.ash;
@@ -234,6 +238,7 @@ const colors = {
       },
       background: {
         darkest: highContrast.colors.licorice,
+        darker: highContrast.colors.oxford,
         dark: highContrast.colors.ash,
         medium: highContrast.colors.tiara,
         light: highContrast.colors.porcelain,
@@ -296,7 +301,7 @@ const colors = {
           return colors.highContrast.dark.link;
         },
         get linkHover() {
-          return colors.standard.dark.text.linkHover
+          return colors.standard.dark.text.linkHover;
         },
         get alert() {
           return colors.highContrast.dark.barney;
@@ -317,6 +322,9 @@ const colors = {
       background: {
         get darkest() {
           return colors.highContrast.dark.licorice;
+        },
+        get darker() {
+          return colors.highContrast.dark.oxford;
         },
         get dark() {
           return colors.highContrast.dark.ash;

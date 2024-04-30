@@ -1,7 +1,6 @@
 import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
-
 const linkOverrides = (mode: Mode, ui: UI) => {
   return {
     color: colors[ui][mode].text.link,

@@ -13,7 +13,6 @@ const formFieldMessageOverrides = (mode: Mode, ui: UI) => {
     colorError: colors[ui][mode].text.danger,
     colorSuccess: colors[ui][mode].text.success,
   };
-
 };
 
 export { formFieldLabelOverrides, formFieldMessageOverrides };

@@ -1,70 +1,38 @@
-import {
-  canvasHighContrast as highContrast,
-  canvas as standard,
-} from "@instructure/ui";
-import * as colorOverrides from "./colors";
+import type { Mode, UI } from "types";
+import { colors } from "../themeOverrides";
 
-const modalOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    borderColor: isDark
-      ? standard.colors.borderDark
-      : standard.colors.borderMedium,
-    inverseBackground: isDark
-      ? standard.colors.backgroundDarkest
-      : standard.colors.backgroundLightest,
+const modalOverrides = (mode: Mode, ui: UI) => {
+  return {
+    textColor: colors[ui][mode].text.darkest,
+    background: colors[ui][mode].background.lightest,
+    borderColor: colors[ui][mode].border.medium,
+    inverseBackground: colors[ui][mode].background.darkest,
+    inverseTextColor: colors[ui][mode].text.lightest,
   };
-
-  const highContrastThemeOverride = {
-    inverseBackground: colorOverrides.black,
-    borderColor: isDark
-      ? highContrast.colors.borderLightest
-      : colorOverrides.black,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
-const modalBodyOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    inverseBackground: isDark
-      ? standard.colors.backgroundDarkest
-      : standard.colors.backgroundLightest,
+const modalBodyOverrides = (mode: Mode, ui: UI) => {
+  return {
+    inverseBackground: colors[ui][mode].background.darker,
   };
-
-  const highContrastThemeOverride = {
-    inverseBackground: colorOverrides.black,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
-const modalFooterOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    inverseBorderColor: standard.colors.backgroundDark,
-    inverseBackground: isDark
-      ? standard.colors.backgroundBrandSecondary
-      : standard.colors.backgroundLight,
+const modalFooterOverrides = (mode: Mode, ui: UI) => {
+  return {
+    background: colors[ui][mode].background.light,
+    borderColor: colors[ui][mode].border.medium,
+    inverseBackground: colors[ui][mode].background.darker,
+    inverseBorderColor: colors[ui][mode].border.darkest,
   };
-
-  const highContrastThemeOverride = {
-    inverseBackground: colorOverrides.black,
-    inverseBorderColor: colorOverrides.white,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
-const modalHeaderOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    inverseBorderColor: standard.colors.backgroundDark,
+const modalHeaderOverrides = (mode: Mode, ui: UI) => {
+  return {
+    background: colors[ui][mode].background.lightest,
+    borderColor: colors[ui][mode].border.medium,
+    inverseBackground: colors[ui][mode].background.darkest,
+    inverseBorderColor: colors[ui][mode].border.darkest,
   };
-
-  const highContrastThemeOverride = {
-    inverseBackground: colorOverrides.black,
-    inverseBorderColor: colorOverrides.white,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
 export {

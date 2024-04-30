@@ -5,10 +5,7 @@ import { CloseButton, Heading, Modal } from "@instructure/ui";
  * Function to render the application modal.
  */
 function LayoutAppModal(): JSX.Element {
-  const {
-    Modal: AppModal,
-    App: { isDark },
-  } = useContexts();
+  const { Modal: AppModal } = useContexts();
 
   /**
    * Function to handle the click event of the close button.
@@ -24,7 +21,6 @@ function LayoutAppModal(): JSX.Element {
         offset="small"
         onClick={hideModal}
         screenReaderLabel="Close"
-        color={isDark ? "primary-inverse" : "primary"}
       />
     );
   };
@@ -49,7 +45,6 @@ function LayoutAppModal(): JSX.Element {
       open={AppModal.isOpen}
       label={AppModal?.props?.modal?.label || "App Modal"}
       onDismiss={hideModal}
-      variant={isDark ? "inverse" : "default"}
       shouldCloseOnDocumentClick
       {...AppModal?.props?.modal}
     >
