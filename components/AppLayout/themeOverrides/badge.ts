@@ -2,38 +2,25 @@ import {
   canvasHighContrast as highContrast,
   canvas as standard,
 } from "@instructure/ui";
-import * as colorOverrides from "./colors";
+import type { Mode, UI } from "types";
+import { colors } from "../themeOverrides";
 
-const badgeOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    color: standard.colors.textLight,
-    colorInverse: standard.colors.textDarkest,
-    colorDanger: isDark
-      ? colorOverrides.darkStandardCrimson
-      : standard.colors.textDanger,
-    colorSuccess: isDark
-      ? colorOverrides.darkStandardShamrock
-      : standard.colors.textSuccess,
-    colorPrimary: isDark
-      ? colorOverrides.darkStandardBrand
-      : standard.colors.textInfo,
+const badgeOverrides = (mode: Mode, ui: UI, isHighContrast: boolean) => {
+  return {
+    /**
+     * Dark mode keeps a light background and dark text on a Badge, so we use the
+     * color definitions from the built-in theme to ensure the badge is readable.
+     */
+    color: isHighContrast
+      ? highContrast.colors.textLight
+      : standard.colors.textLight,
+    colorInverse: isHighContrast
+      ? highContrast.colors.textDarkest
+      : standard.colors.textDarkest,
+    colorDanger: colors[ui][mode].background.danger,
+    colorSuccess: colors[ui][mode].background.success,
+    colorPrimary: colors[ui][mode].background.info,
   };
-
-  const highContrastThemeOverride = {
-    color: highContrast.colors.textLight,
-    colorInverse: highContrast.colors.textDarkest,
-    colorDanger: isDark
-      ? colorOverrides.darkHighContrastCrimson
-      : highContrast.colors.textDanger,
-    colorSuccess: isDark
-      ? colorOverrides.darkHighContrastShamrock
-      : highContrast.colors.textSuccess,
-    colorPrimary: isDark
-      ? colorOverrides.darkHighContrastBrand
-      : highContrast.colors.textInfo,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
 export default badgeOverrides;

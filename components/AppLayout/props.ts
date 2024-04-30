@@ -12,7 +12,7 @@ const ThemeOverrides = (
     componentOverrides: {
       Alert: Overrides.Alert(mode, ui),
       Avatar: Overrides.Avatar(mode, ui, isDark, isHighContrast),
-      Badge: Overrides.Badge(mode, ui),
+      Badge: Overrides.Badge(mode, ui, isHighContrast),
       BaseButton: Overrides.BaseButton(mode, ui),
       Billboard: Overrides.Billboard(mode, ui),
       Breadcrumb: Overrides.Breadcrumb(mode, ui),
