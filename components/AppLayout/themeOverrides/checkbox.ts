@@ -16,6 +16,7 @@ const toggleFacadeOverrides = (mode: Mode, ui: UI) => {
     borderColor: colors[ui][mode].border.medium,
     checkedBackground: colors[ui][mode].background.success,
     uncheckedIconColor: colors[ui][mode].text.darkest,
+    checkedIconColor: colors[ui][mode].text.success,
     focusOutlineColor: colors[ui][mode].border.info,
     labelColor: colors[ui][mode].text.darkest,
   };
