@@ -1,34 +1,19 @@
-import {
-  canvasHighContrast as highContrast,
-  canvas as standard,
-} from "@instructure/ui";
-import * as colorOverrides from "./colors";
+import type { Mode, UI } from "types";
+import { colors } from "../themeOverrides";
 
-const formFieldLabelOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    color: isDark ? standard.colors.textLight : standard.colors.textDarkest,
+const formFieldLabelOverrides = (mode: Mode, ui: UI) => {
+  return {
+    color: colors[ui][mode].text.darkest,
   };
-
-  const highContrastThemeOverride = {
-    color: isDark ? highContrast.colors.textLightest : colorOverrides.black,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
-const formFieldMessageOverrides = (
-  isDark: boolean,
-  isHighContrast: boolean,
-) => {
-  const standardThemeOverride = {
-    color: isDark ? standard.colors.textLight : standard.colors.textDarkest,
+const formFieldMessageOverrides = (mode: Mode, ui: UI) => {
+  return {
+    colorHint: colors[ui][mode].text.darkest,
+    colorError: colors[ui][mode].text.danger,
+    colorSuccess: colors[ui][mode].text.success,
   };
 
-  const highContrastThemeOverride = {
-    color: isDark ? highContrast.colors.textLightest : colorOverrides.black,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
 export { formFieldLabelOverrides, formFieldMessageOverrides };
