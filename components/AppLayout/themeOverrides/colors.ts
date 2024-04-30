@@ -37,6 +37,7 @@ const colors = {
         lightest: standard.colors.white,
         brand: standard.colors.brand,
         link: standard.colors.link,
+        linkHover: "rgb(2, 84, 131)",
         alert: standard.colors.barney,
         info: standard.colors.brand,
         success: standard.colors.shamrock,
@@ -106,6 +107,7 @@ const colors = {
         get link() {
           return colors.standard.dark.link;
         },
+        linkHover: "#059bf2",
         get alert() {
           return colors.standard.dark.barney;
         },
@@ -223,6 +225,7 @@ const colors = {
         lightest: highContrast.colors.white,
         brand: highContrast.colors.brand,
         link: highContrast.colors.link,
+        linkHover: "rgb(5, 78, 114)",
         alert: highContrast.colors.barney,
         info: highContrast.colors.brand,
         success: highContrast.colors.shamrock,
@@ -291,6 +294,9 @@ const colors = {
         },
         get link() {
           return colors.highContrast.dark.link;
+        },
+        get linkHover() {
+          return colors.standard.dark.text.linkHover
         },
         get alert() {
           return colors.highContrast.dark.barney;
