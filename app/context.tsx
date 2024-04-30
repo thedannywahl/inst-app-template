@@ -21,10 +21,10 @@ import type {
   Content,
   Context,
   ModalProps,
+  Mode,
   Theme,
   TrayProps,
   UI,
-  Mode,
   ValidUI,
 } from "types";
 
@@ -299,8 +299,8 @@ export const ContextProvider: React.FC<Children> = ({ children }) => {
    */
   const [modalProps, setModalProps] = useState<
     | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-      label?: string;
-    })
+        label?: string;
+      })
     | undefined
   >(undefined);
 
