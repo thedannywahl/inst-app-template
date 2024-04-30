@@ -1,10 +1,10 @@
-import type { UI, Mode } from "types";
-import colors from "./colorOverrides";
+import type { Mode, UI } from "types";
+import { colors } from "../themeOverrides";
 
-const alertOverrides = (ui: UI, mode: Mode) => {
+const alertOverrides = (mode: Mode, ui: UI) => {
   return {
     background: colors[ui][mode].background.lightest,
-    color: colors[ui][mode].text.light,
+    color: colors[ui][mode].text.darkest,
     infoBorderColor: colors[ui][mode].background.info,
     infoIconBackground: colors[ui][mode].background.info,
     successBorderColor: colors[ui][mode].background.success,

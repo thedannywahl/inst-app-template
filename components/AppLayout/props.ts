@@ -1,52 +1,28 @@
 import type { ThemeOrOverride } from "@instructure/emotion/types/EmotionTypes";
-import type { UI, Mode } from "types";
-import alertOverrides from "./themeOverrides/alert";
-import avatarOverrides from "./themeOverrides/avatar";
-import badgeOverrides from "./themeOverrides/badge";
-import baseButtonOverrides from "./themeOverrides/baseButton";
-import billboardOverrides from "./themeOverrides/billboard";
-import breadcrumbOverrides from "./themeOverrides/breadcrumb";
-import { toggleFacadeOverrides } from "./themeOverrides/checkbox";
-import {
-  formFieldLabelOverrides,
-  formFieldMessageOverrides,
-} from "./themeOverrides/formField";
-import linkOverrides from "./themeOverrides/link";
-import {
-  modalBodyOverrides,
-  modalFooterOverrides,
-  modalHeaderOverrides,
-  modalOverrides,
-} from "./themeOverrides/modal";
-import radioInputOverrides from "./themeOverrides/radioInput";
-import { topNavBarLayoutOverrides } from "./themeOverrides/topNavBar";
-import trayOverrides from "./themeOverrides/tray";
-import viewOverrides from "./themeOverrides/view";
+import type { Mode, UI } from "types";
+import * as Overrides from "./themeOverrides";
 
-const ThemeOverrides = (
-  mode: Mode,
-  ui: UI,
-): ThemeOrOverride | undefined => {
+const ThemeOverrides = (mode: Mode, ui: UI): ThemeOrOverride | undefined => {
   return {
     componentOverrides: {
-      Alert: alertOverrides(ui, mode),
-      Avatar: avatarOverrides(ui, mode),
-      Badge: badgeOverrides(ui, mode),
-      BaseButton: baseButtonOverrides(ui, mode),
-      Billboard: billboardOverrides(ui, mode),
-      Breadcrumb: breadcrumbOverrides(ui, mode),
-      FormFieldLabel: formFieldLabelOverrides(ui, mode),
-      FormFieldMessage: formFieldMessageOverrides(ui, mode),
-      Link: linkOverrides(ui, mode),
-      Modal: modalOverrides(ui, mode),
-      "Modal.Body": modalBodyOverrides(ui, mode),
-      "Modal.Footer": modalFooterOverrides(ui, mode),
-      "Modal.Header": modalHeaderOverrides(ui, mode),
-      RadioInput: radioInputOverrides(ui, mode),
-      ToggleFacade: toggleFacadeOverrides(ui, mode),
-      TopNavBarLayout: topNavBarLayoutOverrides(ui, mode),
-      Tray: trayOverrides(ui, mode),
-      View: viewOverrides(ui, mode),
+      Alert: Overrides.Alert(mode, ui),
+      Avatar: Overrides.Avatar(mode, ui),
+      Badge: Overrides.Badge(mode, ui),
+      BaseButton: Overrides.BaseButton(mode, ui),
+      Billboard: Overrides.Billboard(mode, ui),
+      Breadcrumb: Overrides.Breadcrumb(mode, ui),
+      FormFieldLabel: Overrides.FormFieldLabel(mode, ui),
+      FormFieldMessage: Overrides.FormFieldMessage(mode, ui),
+      Link: Overrides.Link(mode, ui),
+      Modal: Overrides.Modal(mode, ui),
+      "Modal.Body": Overrides.ModalBody(mode, ui),
+      "Modal.Footer": Overrides.ModalFooter(mode, ui),
+      "Modal.Header": Overrides.ModalHeader(mode, ui),
+      RadioInput: Overrides.RadioInput(mode, ui),
+      ToggleFacade: Overrides.ToggleFacade(mode, ui),
+      TopNavBarLayout: Overrides.TopNavBarLayout(mode, ui),
+      Tray: Overrides.Tray(mode, ui),
+      View: Overrides.View(mode, ui),
     },
     themeOverrides: {
       canvas: {

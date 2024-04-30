@@ -3,6 +3,7 @@ import {
   canvas as standard,
 } from "@instructure/ui";
 
+/*
 export const darkOxfordBrand = "#059bf2";
 export const darkOxfordShamrock = "#1aae26";
 export const darkOxfordCrimson = "#ff5e5e";
@@ -10,6 +11,7 @@ export const darkOxfordFire = "#fc661f";
 export const darkOxfordBarney = "#d96fc5";
 export const darkOxfordAsh = "#78858e";
 export const darkOxfordLicorice = standard.colors.porcelain;
+*/
 
 const colors = {
   standard: {

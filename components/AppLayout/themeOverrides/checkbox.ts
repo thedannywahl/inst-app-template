@@ -2,7 +2,7 @@ import {
   canvasHighContrast as highContrast,
   canvas as standard,
 } from "@instructure/ui";
-import * as colorOverrides from "./colorOverrides";
+import * as colorOverrides from "./colors";
 
 const checkboxOverrides = (isDark: boolean, isHighContrast: boolean) => {
   return {};

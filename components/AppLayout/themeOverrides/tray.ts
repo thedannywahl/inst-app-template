@@ -1,27 +1,11 @@
-import {
-  canvasHighContrast as highContrast,
-  canvas as standard,
-} from "@instructure/ui";
-import * as colorOverrides from "./colorOverrides";
+import type { Mode, UI } from "types";
+import { colors } from "../themeOverrides";
 
-const trayOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const standardThemeOverride = {
-    background: isDark
-      ? standard.colors.backgroundDarkest
-      : colorOverrides.white,
-    borderColor: isDark ? standard.colors.oxford : colorOverrides.white,
+const trayOverrides = (mode: Mode, ui: UI) => {
+  return {
+    background: colors[ui][mode].background.lightest,
+    borderColor: colors[ui][mode].border.light,
   };
-
-  const highContrastThemeOverride = {
-    background: isDark
-      ? colorOverrides.black
-      : highContrast.colors.backgroundLightest,
-    borderColor: isDark
-      ? highContrast.colors.borderLightest
-      : colorOverrides.black,
-  };
-
-  return isHighContrast ? highContrastThemeOverride : standardThemeOverride;
 };
 
 export default trayOverrides;
