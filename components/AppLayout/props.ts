@@ -2,11 +2,16 @@ import type { ThemeOrOverride } from "@instructure/emotion/types/EmotionTypes";
 import type { Mode, UI } from "types";
 import * as Overrides from "./themeOverrides";
 
-const ThemeOverrides = (mode: Mode, ui: UI, isDark: boolean, isHighContrast: boolean): ThemeOrOverride | undefined => {
+const ThemeOverrides = (
+  mode: Mode,
+  ui: UI,
+  isDark: boolean,
+  isHighContrast: boolean,
+): ThemeOrOverride | undefined => {
   return {
     componentOverrides: {
       Alert: Overrides.Alert(mode, ui),
-      Avatar: Overrides.Avatar(mode, ui),
+      Avatar: Overrides.Avatar(mode, ui, isDark, isHighContrast),
       Badge: Overrides.Badge(mode, ui),
       BaseButton: Overrides.BaseButton(mode, ui),
       Billboard: Overrides.Billboard(mode, ui),
