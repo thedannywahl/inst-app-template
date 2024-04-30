@@ -16,6 +16,8 @@ const ThemeOverrides = (
       BaseButton: Overrides.BaseButton(mode, ui),
       Billboard: Overrides.Billboard(mode, ui),
       Breadcrumb: Overrides.Breadcrumb(mode, ui),
+      Checkbox: Overrides.Checkbox(mode, ui),
+      CheckboxFacade: Overrides.CheckboxFacade(mode, ui),
       FormFieldLabel: Overrides.FormFieldLabel(mode, ui),
       FormFieldMessage: Overrides.FormFieldMessage(mode, ui),
       Link: Overrides.Link(mode, ui),
