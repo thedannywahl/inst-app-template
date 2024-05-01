@@ -1,68 +1,48 @@
-import {
-  canvasHighContrast as highContrast,
-  canvas as standard,
-} from "@instructure/ui";
-import * as colorOverrides from "./colors";
+import type { Mode, UI } from "types";
+import { colors } from "../themeOverrides";
 
-const topNavBarOverrides = (isDark: boolean, isHighContrast: boolean) => {
+const topNavBarOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
-const topNavBarActionItemsOverrides = (
-  isDark: boolean,
-  isHighContrast: boolean,
-) => {
+const topNavBarActionItemsOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
-const topNavBarBrandOverrides = (isDark: boolean, isHighContrast: boolean) => {
+const topNavBarBrandOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
-const topNavBarBreadcrumbOverrides = (
-  isDark: boolean,
-  isHighContrast: boolean,
-) => {
+const topNavBarBreadcrumbOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
-const topNavBarItemOverrides = (isDark: boolean, isHighContrast: boolean) => {
+const topNavBarItemOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
-const topNavBarLayoutOverrides = (isDark: boolean, isHighContrast: boolean) => {
-  const componentOverride = {
+const topNavBarLayoutOverrides = (mode: Mode, ui: UI, isHighContrast: boolean) => {
+  return {
     desktopInlinePadding: "1.5rem !important",
     breakpoint: "684",
-  };
-
-  const standardThemeOverride = {
-    desktopBackground: standard.colors.backgroundBrandSecondary,
-    desktopBackgroundInverse: colorOverrides.gray,
-    smallViewportBackgroundInverse: colorOverrides.gray,
-    desktopBottomBorder: `0.0625rem solid ${standard.colors.borderDark}`,
-    desktopBottomBorderInverse: `0.0625rem solid ${standard.colors.borderMedium}`,
-  };
-
-  const highContrastThemeOverride = {
-    desktopBackground: colorOverrides.black,
-    desktopBottomBorder: "0.0625rem solid!important",
-  };
-
-  return {
-    ...componentOverride,
-    ...(isHighContrast ? highContrastThemeOverride : standardThemeOverride),
+    desktopBackground: colors[ui][mode].lighter,
+    desktopBackgroundInverse: colors[ui][mode].darker,
+    desktopBottomBorder: `0.0625rem solid ${isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light}`,
+    desktopBottomBorderInverse: `0.0625rem solid ${isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark}`,
+    desktopUserSeparatorColor: colors[ui][mode].dark,
+    desktopUserSeparatorColorInverse: colors[ui][mode].light,
+    smallViewportBackground: colors[ui][mode].lighter,
+    smallViewportBackgroundInverse: colors[ui][mode].darker,
+    smallViewportBottomBorder: `0.0625rem solid ${isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light}`,
+    smallViewportBottomBorderInverse: `0.0625rem solid ${isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark}`,
   };
 };
 
-const topNavBarMenuItemsOverrides = (
-  isDark: boolean,
-  isHighContrast: boolean,
-) => {
+const topNavBarMenuItemsOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
-const topNavBarUserOverrides = (isDark: boolean, isHighContrast: boolean) => {
+const topNavBarUserOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
