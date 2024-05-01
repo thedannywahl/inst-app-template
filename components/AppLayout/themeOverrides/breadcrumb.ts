@@ -8,7 +8,7 @@ const breadcrumbOverrides = (mode: Mode, ui: UI) => {
 };
 
 const breadcrumbLinkOverrides = (mode: Mode, ui: UI) => {
-  return {}
-}
+  return {};
+};
 
 export { breadcrumbOverrides, breadcrumbLinkOverrides };

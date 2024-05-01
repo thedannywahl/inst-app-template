@@ -2,8 +2,8 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const formFieldOverrides = (mode: Mode, ui: UI) => {
-  return {}
-}
+  return {};
+};
 
 const formFieldLabelOverrides = (mode: Mode, ui: UI) => {
   return {
@@ -12,8 +12,8 @@ const formFieldLabelOverrides = (mode: Mode, ui: UI) => {
 };
 
 const formFieldLayoutOverrides = (mode: Mode, ui: UI) => {
-  return {}
-}
+  return {};
+};
 
 const formFieldMessageOverrides = (mode: Mode, ui: UI) => {
   return {
@@ -24,7 +24,13 @@ const formFieldMessageOverrides = (mode: Mode, ui: UI) => {
 };
 
 const formFieldMessagesOverrides = (mode: Mode, ui: UI) => {
-  return {}
-}
+  return {};
+};
 
-export { formFieldOverrides, formFieldLabelOverrides, formFieldLayoutOverrides, formFieldMessageOverrides, formFieldMessagesOverrides };
+export {
+  formFieldOverrides,
+  formFieldLabelOverrides,
+  formFieldLayoutOverrides,
+  formFieldMessageOverrides,
+  formFieldMessagesOverrides,
+};

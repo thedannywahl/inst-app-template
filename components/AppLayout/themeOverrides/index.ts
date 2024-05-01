@@ -4,7 +4,10 @@ export { default as Avatar } from "./avatar";
 export { default as Badge } from "./badge";
 export { default as BaseButton } from "./baseButton";
 export { default as Billboard } from "./billboard";
-export { breadcrumbOverrides as Breadcrumb, breadcrumbLinkOverrides as BreadcrumbLink } from "./breadcrumb";
+export {
+  breadcrumbOverrides as Breadcrumb,
+  breadcrumbLinkOverrides as BreadcrumbLink,
+} from "./breadcrumb";
 export {
   checkboxFacadeOverrides as CheckboxFacade,
   checkboxOverrides as Checkbox,

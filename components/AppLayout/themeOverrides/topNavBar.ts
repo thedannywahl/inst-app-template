@@ -21,20 +21,32 @@ const topNavBarItemOverrides = (mode: Mode, ui: UI) => {
   return {};
 };
 
-const topNavBarLayoutOverrides = (mode: Mode, ui: UI, isHighContrast: boolean) => {
+const topNavBarLayoutOverrides = (
+  mode: Mode,
+  ui: UI,
+  isHighContrast: boolean,
+) => {
   return {
     desktopInlinePadding: "1.5rem !important",
     breakpoint: "684",
     desktopBackground: colors[ui][mode].lighter,
     desktopBackgroundInverse: colors[ui][mode].darker,
-    desktopBottomBorder: `0.0625rem solid ${isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light}`,
-    desktopBottomBorderInverse: `0.0625rem solid ${isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark}`,
+    desktopBottomBorder: `0.0625rem solid ${
+      isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light
+    }`,
+    desktopBottomBorderInverse: `0.0625rem solid ${
+      isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark
+    }`,
     desktopUserSeparatorColor: colors[ui][mode].dark,
     desktopUserSeparatorColorInverse: colors[ui][mode].light,
     smallViewportBackground: colors[ui][mode].lighter,
     smallViewportBackgroundInverse: colors[ui][mode].darker,
-    smallViewportBottomBorder: `0.0625rem solid ${isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light}`,
-    smallViewportBottomBorderInverse: `0.0625rem solid ${isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark}`,
+    smallViewportBottomBorder: `0.0625rem solid ${
+      isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light
+    }`,
+    smallViewportBottomBorderInverse: `0.0625rem solid ${
+      isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark
+    }`,
   };
 };
 

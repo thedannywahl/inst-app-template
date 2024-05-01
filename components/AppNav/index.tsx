@@ -4,7 +4,6 @@ import getActionItems from "./ActionItems";
 import type { TopNavBarItem } from "./types";
 
 function LayoutTopNavBar(): JSX.Element {
-
   const handleDropdownMenuToggle = (isMenuOpen: boolean) => {
     const htmlEl = document.querySelector("html");
     if (!htmlEl) return;
