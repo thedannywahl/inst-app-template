@@ -15,7 +15,7 @@
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^0.37.0",
+    "@dotenvx/dotenvx": "^0.37.1",
     "@instructure/emotion": "^8.55.1",
     "@instructure/ui": "^8.55.1",
     "@instructure/ui-react-utils": "^8.55.1",
@@ -35,7 +35,7 @@
     "@biomejs/biome": "^1.7.2",
     "@playwright/experimental-ct-react": "^1.43.1",
     "@playwright/test": "^1.43.1",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "typedoc": "^0.25.13",
