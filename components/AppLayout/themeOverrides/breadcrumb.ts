@@ -7,4 +7,8 @@ const breadcrumbOverrides = (mode: Mode, ui: UI) => {
   };
 };
 
-export default breadcrumbOverrides;
+const breadcrumbLinkOverrides = (mode: Mode, ui: UI) => {
+  return {}
+}
+
+export { breadcrumbOverrides, breadcrumbLinkOverrides };
