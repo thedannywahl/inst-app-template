@@ -1,10 +1,10 @@
 import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
-const trayOverrides = (mode: Mode, ui: UI) => {
+const trayOverrides = (mode: Mode, ui: UI, isHighContrast: boolean) => {
   return {
     background: colors[ui][mode].lightest,
-    borderColor: colors[ui][mode].lighter,
+    borderColor: isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].lighter,
   };
 };
 

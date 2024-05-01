@@ -64,7 +64,7 @@ const ThemeOverrides = (
       "TopNavBar.User": Overrides.TopNavBarUser(mode, ui),
 
       // InstructureUI.Tray
-      Tray: Overrides.Tray(mode, ui),
+      Tray: Overrides.Tray(mode, ui, isHighContrast),
 
       // InstructureUI.View
       View: Overrides.View(mode, ui),
