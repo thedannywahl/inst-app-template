@@ -338,40 +338,40 @@ const colors = {
       },
       black: standard.colors.white,
       get darkest() {
-        return colors.highContrast.light.licorice;
+        return colors.highContrast.dark.licorice;
       },
       get darker() {
-        return colors.highContrast.light.oxford;
+        return colors.highContrast.dark.oxford;
       },
       get dark() {
-        return colors.highContrast.light.ash;
+        return colors.highContrast.dark.ash;
       },
       get medium() {
-        return colors.highContrast.light.slate;
+        return colors.highContrast.dark.slate;
       },
       get light() {
-        return colors.highContrast.light.tiara;
+        return colors.highContrast.dark.tiara;
       },
       get lighter() {
-        return colors.highContrast.light.porcelain;
+        return colors.highContrast.dark.porcelain;
       },
       get lightest() {
-        return colors.highContrast.light.white;
+        return colors.highContrast.dark.white;
       },
       get info() {
-        return colors.highContrast.light.brand;
+        return colors.highContrast.dark.brand;
       },
       get alert() {
-        return colors.highContrast.light.barney;
+        return colors.highContrast.dark.barney;
       },
       get success() {
-        return colors.highContrast.light.shamrock;
+        return colors.highContrast.dark.shamrock;
       },
       get danger() {
-        return colors.highContrast.light.crimson;
+        return colors.highContrast.dark.crimson;
       },
       get warning() {
-        return colors.highContrast.light.fire;
+        return colors.highContrast.dark.fire;
       },
     },
   },

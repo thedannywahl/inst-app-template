@@ -3,8 +3,8 @@ import { colors } from "../themeOverrides";
 
 const trayOverrides = (mode: Mode, ui: UI) => {
   return {
-    background: colors[ui][mode].background.lightest,
-    borderColor: colors[ui][mode].border.light,
+    background: colors[ui][mode].lightest,
+    borderColor: colors[ui][mode].lighter,
   };
 };
 

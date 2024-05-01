@@ -17,9 +17,9 @@ const badgeOverrides = (mode: Mode, ui: UI, isHighContrast: boolean) => {
     colorInverse: isHighContrast
       ? highContrast.colors.textDarkest
       : standard.colors.textDarkest,
-    colorDanger: colors[ui][mode].background.danger,
-    colorSuccess: colors[ui][mode].background.success,
-    colorPrimary: colors[ui][mode].background.info,
+    colorDanger: colors[ui][mode].danger,
+    colorSuccess: colors[ui][mode].success,
+    colorPrimary: colors[ui][mode].info,
   };
 };
 

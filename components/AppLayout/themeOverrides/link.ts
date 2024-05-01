@@ -3,12 +3,12 @@ import { colors } from "../themeOverrides";
 
 const linkOverrides = (mode: Mode, ui: UI) => {
   return {
-    color: colors[ui][mode].text.link,
-    focusOutlineColor: colors[ui][mode].text.link,
-    hoverColor: colors[ui][mode].text.linkHover,
-    colorInverse: colors[ui][mode].text.light,
-    focusInverseOutlineColor: colors[ui][mode].text.lightest,
-    focusInverseIconOutlineColor: colors[ui][mode].text.lightest,
+    color: colors[ui][mode].info,
+    focusOutlineColor: colors[ui][mode].info,
+    hoverColor: colors[ui][mode].linkHover,
+    colorInverse: colors[ui][mode].lighter,
+    focusInverseOutlineColor: colors[ui][mode].lightest,
+    focusInverseIconOutlineColor: colors[ui][mode].lightest,
   };
 };
 

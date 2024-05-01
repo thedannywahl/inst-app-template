@@ -3,8 +3,8 @@ import { colors } from "../themeOverrides";
 
 const viewOverrides = (mode: Mode, ui: UI) => {
   return {
-    backgroundPrimary: colors[ui][mode].background.lightest,
-    color: colors[ui][mode].text.darkest,
+    backgroundPrimary: colors[ui][mode].lightest,
+    color: colors[ui][mode].darkest,
   };
 };
 
