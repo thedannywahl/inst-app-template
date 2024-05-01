@@ -4,9 +4,6 @@ import getActionItems from "./ActionItems";
 import type { TopNavBarItem } from "./types";
 
 function LayoutTopNavBar(): JSX.Element {
-  const {
-    App: { isDark },
-  } = useContexts();
 
   const handleDropdownMenuToggle = (isMenuOpen: boolean) => {
     const htmlEl = document.querySelector("html");
@@ -17,7 +14,7 @@ function LayoutTopNavBar(): JSX.Element {
   const ActionItems: TopNavBarItem[] = getActionItems();
 
   return (
-    <TopNavBar inverseColor={!isDark}>
+    <TopNavBar>
       {() => {
         return (
           <TopNavBar.Layout
