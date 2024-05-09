@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^0.37.1",
-    "@instructure/emotion": "^8.56.0",
-    "@instructure/ui": "^8.56.0",
-    "@instructure/ui-react-utils": "^8.56.0",
+    "@instructure/emotion": "^9.0.1",
+    "@instructure/ui": "^9.0.1",
+    "@instructure/ui-react-utils": "^9.0.1",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.3",
