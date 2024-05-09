@@ -23,7 +23,6 @@ function LayoutTopNavBar(): JSX.Element {
               dropdownMenuLabel: "Main Menu",
               onDropdownMenuToggle: handleDropdownMenuToggle,
             }}
-            desktopConfig={{}}
             renderBrand={
               <TopNavBar.Brand
                 screenReaderLabel="Instructure Compliance Packages"
