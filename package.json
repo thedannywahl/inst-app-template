@@ -15,7 +15,7 @@
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^0.37.1",
+    "@dotenvx/dotenvx": "^0.38.0",
     "@instructure/emotion": "^9.0.1",
     "@instructure/ui": "^9.0.1",
     "@instructure/ui-react-utils": "^9.0.1",
