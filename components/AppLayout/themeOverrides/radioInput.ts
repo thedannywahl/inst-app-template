@@ -2,16 +2,17 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const radioInputOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    labelColor: colors[ui][mode].darkest,
-    background: colors[ui][mode].lightest,
+    labelColor: color.darkest,
+    background: color.lightest,
     /**
      * borderColor is a non-standard color definition
      * by default, so we have to use the base color name.
      */
-    borderColor: colors[ui][mode].tiara,
-    hoverBorderColor: colors[ui][mode].darkest,
-    focusBorderColor: colors[ui][mode].info,
+    borderColor: color.tiara,
+    hoverBorderColor: color.darkest,
+    focusBorderColor: color.info,
   };
 };
 

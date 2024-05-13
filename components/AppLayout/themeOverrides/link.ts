@@ -2,13 +2,14 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const linkOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    color: colors[ui][mode].info,
-    focusOutlineColor: colors[ui][mode].info,
-    hoverColor: colors[ui][mode].linkHover,
-    colorInverse: colors[ui][mode].lighter,
-    focusInverseOutlineColor: colors[ui][mode].lightest,
-    focusInverseIconOutlineColor: colors[ui][mode].lightest,
+    color: color.info,
+    focusOutlineColor: color.info,
+    hoverColor: color.linkHover,
+    colorInverse: color.lighter,
+    focusInverseOutlineColor: color.lightest,
+    focusInverseIconOutlineColor: color.lightest,
   };
 };
 

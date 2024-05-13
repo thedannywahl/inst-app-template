@@ -2,22 +2,27 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const topNavBarOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {};
 };
 
 const topNavBarActionItemsOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {};
 };
 
 const topNavBarBrandOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {};
 };
 
 const topNavBarBreadcrumbOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {};
 };
 
 const topNavBarItemOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {};
 };
 
@@ -26,35 +31,38 @@ const topNavBarLayoutOverrides = (
   ui: UI,
   isHighContrast: boolean,
 ) => {
+  const color = colors[ui][mode];
   return {
     desktopInlinePadding: "1.5rem !important",
     breakpoint: "684",
-    desktopBackground: colors[ui][mode].lighter,
-    desktopBackgroundInverse: colors[ui][mode].darker,
+    desktopBackground: color.lighter,
+    desktopBackgroundInverse: color.darker,
     desktopBottomBorder: `0.0625rem solid ${
-      isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light
+      isHighContrast ? color.darkest : color.light
     }`,
     desktopBottomBorderInverse: `0.0625rem solid ${
-      isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark
+      isHighContrast ? color.lightest : color.dark
     }`,
-    desktopUserSeparatorColor: colors[ui][mode].dark,
-    desktopUserSeparatorColorInverse: colors[ui][mode].light,
-    smallViewportBackground: colors[ui][mode].lighter,
-    smallViewportBackgroundInverse: colors[ui][mode].darker,
+    desktopUserSeparatorColor: color.dark,
+    desktopUserSeparatorColorInverse: color.light,
+    smallViewportBackground: color.lighter,
+    smallViewportBackgroundInverse: color.darker,
     smallViewportBottomBorder: `0.0625rem solid ${
-      isHighContrast ? colors[ui][mode].darkest : colors[ui][mode].light
+      isHighContrast ? color.darkest : color.light
     }`,
     smallViewportBottomBorderInverse: `0.0625rem solid ${
-      isHighContrast ? colors[ui][mode].lightest : colors[ui][mode].dark
+      isHighContrast ? color.lightest : color.dark
     }`,
   };
 };
 
 const topNavBarMenuItemsOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {};
 };
 
 const topNavBarUserOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {};
 };
 

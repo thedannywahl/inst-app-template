@@ -2,36 +2,40 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const modalOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    textColor: colors[ui][mode].darkest,
-    background: colors[ui][mode].lightest,
-    borderColor: colors[ui][mode].medium,
-    inverseBackground: colors[ui][mode].darkest,
-    inverseTextColor: colors[ui][mode].lightest,
+    textColor: color.darkest,
+    background: color.lightest,
+    borderColor: color.medium,
+    inverseBackground: color.darkest,
+    inverseTextColor: color.lightest,
   };
 };
 
 const modalBodyOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    inverseBackground: colors[ui][mode].darker,
+    inverseBackground: color.darker,
   };
 };
 
 const modalFooterOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    background: colors[ui][mode].lighter,
-    borderColor: colors[ui][mode].medium,
-    inverseBackground: colors[ui][mode].darker,
-    inverseBorderColor: colors[ui][mode].darkest,
+    background: color.lighter,
+    borderColor: color.medium,
+    inverseBackground: color.darker,
+    inverseBorderColor: color.darkest,
   };
 };
 
 const modalHeaderOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    background: colors[ui][mode].lightest,
-    borderColor: colors[ui][mode].medium,
-    inverseBackground: colors[ui][mode].darkest,
-    inverseBorderColor: colors[ui][mode].darkest,
+    background: color.lightest,
+    borderColor: color.medium,
+    inverseBackground: color.darkest,
+    inverseBorderColor: color.darkest,
   };
 };
 

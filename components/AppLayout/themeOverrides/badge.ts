@@ -6,6 +6,7 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const badgeOverrides = (mode: Mode, ui: UI, isHighContrast: boolean) => {
+  const color = colors[ui][mode];
   return {
     /**
      * Dark mode keeps a light background and dark text on a Badge, so we use the
@@ -17,9 +18,9 @@ const badgeOverrides = (mode: Mode, ui: UI, isHighContrast: boolean) => {
     colorInverse: isHighContrast
       ? highContrast.colors.textDarkest
       : standard.colors.textDarkest,
-    colorDanger: colors[ui][mode].danger,
-    colorSuccess: colors[ui][mode].success,
-    colorPrimary: colors[ui][mode].info,
+    colorDanger: color.danger,
+    colorSuccess: color.success,
+    colorPrimary: color.info,
   };
 };
 

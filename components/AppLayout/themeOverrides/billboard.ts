@@ -2,16 +2,17 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const billboardOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    iconColor: colors[ui][mode].dark,
-    iconHoverColor: colors[ui][mode].info,
-    backgroundColor: colors[ui][mode].lightest,
-    iconHoverColorInverse: colors[ui][mode].lightest,
-    messageColor: colors[ui][mode].dark,
-    messageColorClickable: colors[ui][mode].info,
-    messageColorInverse: colors[ui][mode].lighter,
-    clickableActiveBg: colors[ui][mode].info,
-    clickableActiveText: colors[ui][mode].lightest,
+    iconColor: color.dark,
+    iconHoverColor: color.info,
+    backgroundColor: color.lightest,
+    iconHoverColorInverse: color.lightest,
+    messageColor: color.dark,
+    messageColorClickable: color.info,
+    messageColorInverse: color.lighter,
+    clickableActiveBg: color.info,
+    clickableActiveText: color.lightest,
   };
 };
 

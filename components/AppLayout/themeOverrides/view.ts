@@ -2,9 +2,10 @@ import type { Mode, UI } from "types";
 import { colors } from "../themeOverrides";
 
 const viewOverrides = (mode: Mode, ui: UI) => {
+  const color = colors[ui][mode];
   return {
-    backgroundPrimary: colors[ui][mode].lightest,
-    color: colors[ui][mode].darkest,
+    backgroundPrimary: color.lightest,
+    color: color.darkest,
   };
 };
 
