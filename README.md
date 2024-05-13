@@ -53,13 +53,17 @@ Out of the box it provides a fully typed project with Next wired for:
 
 Instructure UI v9 is used with SSR support for [Emotion](https://emotion.sh/docs/introduction).
 
-#### Themes
+#### UI Themes
 
 Themes are renamed from `canvas` to `standard` and from `canvas-high-contrast` to `highContrast`
 
-#### UI
+#### UI Mode
 
 UI modes are supported as `light`, `dark`, and `system`.  This means that themes and UIs can be combined.
+
+#### Colors
+
+Colors are provided in a structured object in the format of `colors[ui][mode].*` where `*` is a scale of shades from `lightest` to `darkest` and also provides shade names based on UI Theme variables.  This means you do not need nests of conditional statements to handle colors.  Component props have ThemeOverrides defined based on UI Context.  So `<Text color="primary">` just works as you would expect regardless of theme or mode as does ``<span style="color:`${colors[ui][mode].brand}`">``
 
 #### Accessibility
 
