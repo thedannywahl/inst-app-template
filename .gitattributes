@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Allow parsing of JSON files with comments
+*.json  linguist-language=JSON-with-Comments
