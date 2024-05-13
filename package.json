@@ -54,7 +54,5 @@
       "@instructure/ui-test-sandbox>sinon": "^17.0.1"
     }
   },
-  "browserslist": [
-    "extends @instructure/browserslist-config-canvas-lms"
-  ]
+  "browserslist": ["extends @instructure/browserslist-config-canvas-lms"]
 }
