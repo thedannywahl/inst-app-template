@@ -38,7 +38,7 @@ const signature = (fn: (...args: unknown[]) => void): string => {
  * @example mix("rgb(255 0 0)", 50); // "rgb(255 128 128 / 1)"
  */
 const mix = (color: RGB, amount: number): string => {
-  const err = "Invalid color format ${color}";
+  const err = `Invalid color format ${color}`;
   let rgb = [] as number[];
   let match = null as RegExpMatchArray | null;
   if (color.charAt(0) === "#") {
