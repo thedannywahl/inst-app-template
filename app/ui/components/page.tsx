@@ -364,6 +364,7 @@ function Page(): JSX.Element {
             Condensed
           </BaseButton>
         </View>
+        <Heading level="h4">primary</Heading>
         <View display="block" padding="small 0">
           <BaseButton color="primary" margin="0 small 0 0" size="small">
             Click me
@@ -403,7 +404,8 @@ function Page(): JSX.Element {
             Condensed
           </BaseButton>
         </View>
-        <View display="block" padding="small 0">
+        <Heading level="h4">primary-inverse</Heading>
+        <View display="block" padding="small 0" background="primary-inverse">
           <BaseButton color="primary-inverse" margin="0 small 0 0" size="small">
             Click me
           </BaseButton>
@@ -442,6 +444,7 @@ function Page(): JSX.Element {
             Condensed
           </BaseButton>
         </View>
+        <Heading level="h4">secondary</Heading>
         <View display="block" padding="small 0">
           <BaseButton color="secondary" margin="0 small 0 0" size="small">
             Click me
@@ -481,6 +484,7 @@ function Page(): JSX.Element {
             Condensed
           </BaseButton>
         </View>
+        <Heading level="h4">success</Heading>
         <View display="block" padding="small 0">
           <BaseButton color="success" margin="0 small 0 0" size="small">
             Click me
@@ -520,6 +524,7 @@ function Page(): JSX.Element {
             Condensed
           </BaseButton>
         </View>
+        <Heading level="h4">error</Heading>
         <View display="block" padding="small 0">
           <BaseButton color="danger" margin="0 small 0 0" size="small">
             Click me
