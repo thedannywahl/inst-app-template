@@ -6,11 +6,7 @@ const radioInputOverrides = (mode: Mode, ui: UI) => {
   return {
     labelColor: color.darkest,
     background: color.lightest,
-    /**
-     * borderColor is a non-standard color definition
-     * by default, so we have to use the base color name.
-     */
-    borderColor: color.tiara,
+    borderColor: color.light,
     hoverBorderColor: color.darkest,
     focusBorderColor: color.info,
   };

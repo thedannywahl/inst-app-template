@@ -6,7 +6,7 @@ const linkOverrides = (mode: Mode, ui: UI) => {
   return {
     color: color.info,
     focusOutlineColor: color.info,
-    hoverColor: color.linkHover,
+    hoverColor: color.infoHover,
     colorInverse: color.lighter,
     focusInverseOutlineColor: color.lightest,
     focusInverseIconOutlineColor: color.lightest,
