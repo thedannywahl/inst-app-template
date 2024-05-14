@@ -15,20 +15,21 @@ export type Children = {
 
 export type RGB =
   | `rgb(${number} ${number} ${number})`
-  | `rgb(${number} ${number} ${number} / ${number})`;
+  | `rgb(${number} ${number} ${number} / ${number})`
+  | `#${string}`;
 
 // Modal
 export type ModalProps =
   | {
-      modal:
-        | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
-            label?: string;
-          })
-        | undefined;
-      header?: ComponentProps<typeof Modal.Header>;
-      body?: ComponentProps<typeof Modal.Body>;
-      footer?: ComponentProps<typeof Modal.Footer>;
-    }
+    modal:
+    | (Omit<ComponentProps<typeof Modal>, "children" | "label"> & {
+      label?: string;
+    })
+    | undefined;
+    header?: ComponentProps<typeof Modal.Header>;
+    body?: ComponentProps<typeof Modal.Body>;
+    footer?: ComponentProps<typeof Modal.Footer>;
+  }
   | undefined;
 
 export type ShowModal = (

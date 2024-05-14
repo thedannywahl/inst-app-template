@@ -38,12 +38,23 @@ const signature = (fn: (...args: unknown[]) => void): string => {
  * @example mix("rgb(255 0 0)", 50); // "rgb(255 128 128 / 1)"
  */
 const mix = (color: RGB, amount: number): string => {
-  const match = color.match(/\(([^)]+)\)/);
-  if (!match) throw new Error("Invalid color format");
-  const rgb = match[1]
-    .split(" ")
-    .filter((v) => v !== "/")
-    .map(Number);
+  const err = "Invalid color format ${color}";
+  let rgb = [] as number[];
+  let match = null as RegExpMatchArray | null;
+  if (color.charAt(0) === "#") {
+    const hexRegex = /^#?([a-f\d])([a-f\d])([a-f\d])([a-f\d])([a-f\d])([a-f\d])$/i;
+    match = color.match(hexRegex)
+    if (!match) throw new Error(err);
+    rgb = match.slice(1).map(v => Number.parseInt(v + v, 16))
+  } else {
+    const rgbRegEx = /\(([^)]+)\)/
+    const match = color.match(rgbRegEx);
+    if (!match) throw new Error(err);
+    rgb = match[1]
+      .split(" ")
+      .filter((v) => v !== "/")
+      .map(Number);
+  }
   const shaded = rgb
     .slice(0, 3)
     .map((c) =>
