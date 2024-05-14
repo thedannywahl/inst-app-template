@@ -13,6 +13,10 @@ export type Children = {
   children: React.ReactNode;
 };
 
+export type RGB =
+  | `rgb(${number} ${number} ${number})`
+  | `rgb(${number} ${number} ${number} / ${number})`;
+
 // Modal
 export type ModalProps =
   | {

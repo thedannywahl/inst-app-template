@@ -1,3 +1,5 @@
+import type { RGB } from "types";
+
 /**
  * Returns the signature of a function as a string.
  *
@@ -22,26 +24,40 @@ const signature = (fn: (...args: unknown[]) => void): string => {
 };
 
 /**
- * `handle` is a higher-order function that wraps a given function with error handling.
+ * Lightens or darkens a color with a specified percentage.
  *
- * @param {(...args: unknown[]) => void} fn - The function to be wrapped.
+ * @param {RGB} color - The color to mix. This should be a string in the format "rgb(r g b)" or "rgb(r g b / a)".
+ * @param {number} amount - The percentage to mix the color by. This should be a number between -100 and 100.
+ * If the amount is less than 0, it will be treated as 0. If the amount is more than 100, it will be treated as 100.
  *
- * @returns {(...args: unknown[]) => void} Returns a new function that, when called, calls the original function with the same arguments. If the original function is undefined, it throws an error and returns an empty function.
+ * @returns {string} The mixed color. This will be a string in the format "rgb(r g b / a)",
+ * where r, g, and b are the mixed red, green, and blue color components, and a is the original alpha component or 1.
  *
- * @throws {Error} Throws an error if the provided function is undefined.
+ * @throws {Error} Will throw an error if the color format is invalid.
+ * 
+ * @example mix("rgb(255 0 0)", 50); // "rgb(255 128 128 / 1)"
  */
-const handle = (
-  fn: (...args: unknown[]) => void,
-): ((...args: unknown[]) => void) => {
-  const err: string = "Function is undefined";
-  try {
-    if (!fn) throw new Error("Function is undefined");
-    return (...args: unknown[]) => fn(...args);
-  } catch (error) {
-    console.error(err);
-    console.error(error);
-    return () => {};
-  }
+const mix = (color: RGB, amount: number): string => {
+  const match = color.match(/\(([^)]+)\)/);
+  if (!match) throw new Error("Invalid color format");
+  const rgb = match[1]
+    .split(" ")
+    .filter((v) => v !== "/")
+    .map(Number);
+  const shaded = rgb
+    .slice(0, 3)
+    .map((c) =>
+      Math.min(
+        255,
+        Math.max(
+          0,
+          Math.floor(
+            c + 255 * (1 - (1 - Math.min(100, Math.max(-100, amount)) / 100)),
+          ),
+        ),
+      ),
+    );
+  return `rgb(${[...shaded].join(" ")} / ${rgb[3] ? rgb[3] : 1})`;
 };
 
-export { signature, handle };
+export { signature, mix };
