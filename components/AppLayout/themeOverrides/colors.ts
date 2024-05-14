@@ -161,8 +161,12 @@ const colors = {
       tiara: standard.colors.tiara,
       porcelain: standard.colors.porcelain,
       porcelainHover: "#DBDBDB",
-      get white() { return colors.fixed.white; },
-      get black() { return colors.fixed.black; },
+      get white() {
+        return colors.fixed.white;
+      },
+      get black() {
+        return colors.fixed.black;
+      },
       get darkest() {
         return colors.standard.light.licorice;
       },
@@ -216,7 +220,7 @@ const colors = {
       },
       get warningHover() {
         return colors.standard.light.fireHover;
-      }
+      },
     },
     dark: {
       brand: "#0489D5",
@@ -303,7 +307,7 @@ const colors = {
       },
       get warningHover() {
         return colors.standard.dark.fireHover;
-      }
+      },
     },
   },
   highContrast: {
