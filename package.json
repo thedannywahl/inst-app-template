@@ -39,7 +39,7 @@
     "@microsoft/api-extractor": "^7.43.4",
     "@playwright/experimental-ct-react": "^1.44.0",
     "@playwright/test": "^1.44.0",
-    "@types/node": "^20.12.11",
+    "@types/node": "^20.12.12",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "typescript": "^5.4.5"
@@ -54,5 +54,7 @@
       "@instructure/ui-test-sandbox>sinon": "^17.0.1"
     }
   },
-  "browserslist": ["extends @instructure/browserslist-config-canvas-lms"]
+  "browserslist": [
+    "extends @instructure/browserslist-config-canvas-lms"
+  ]
 }

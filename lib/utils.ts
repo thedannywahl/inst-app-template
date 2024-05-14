@@ -28,7 +28,7 @@ const signature = (fn: (...args: unknown[]) => void): string => {
  *
  * @param {RGB} color - The color to mix. This should be a string in the format "rgb(r g b)" or "rgb(r g b / a)".
  * @param {number} amount - The percentage to mix the color by. This should be a number between -100 and 100.
- * If the amount is less than 0, it will be treated as 0. If the amount is more than 100, it will be treated as 100.
+ * If the amount is less than -100, it will be treated as -100. If the amount is more than 100, it will be treated as 100.
  *
  * @returns {string} The mixed color. This will be a string in the format "rgb(r g b / a)",
  * where r, g, and b are the mixed red, green, and blue color components, and a is the original alpha component or 1.
