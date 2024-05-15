@@ -11,17 +11,19 @@ export const locales: Locale[] = [
   "pt",
 ] as const;
 
+export const defaultLocale = locales[0] as Locale;
+
 export default getRequestConfig(async () => {
   // This can either be defined statically if only a single locale
   // is supported, or alternatively read from user settings
-  const locale = locales[0];
+  const locale = defaultLocale;
 
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
 
   return {
     messages: (
-      await (locale === locales[0]
-        ? import(`@/messages/${locales[0]}.json`)
+      await (locale === defaultLocale
+        ? import(`@/messages/${defaultLocale}.json`)
         : import(`@/messages/${locale}.json`))
     ).default,
   };
