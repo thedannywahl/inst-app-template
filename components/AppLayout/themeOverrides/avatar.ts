@@ -9,8 +9,8 @@ const avatarOverrides = (
 ) => {
   const color = colors[ui][mode];
   return {
-    background: color.lightest,
-    borderColor: color.medium,
+    background: color.white,
+    borderColor: color.slate,
     boxShadowColor: isHighContrast
       ? isDark
         ? "rgba(255, 255, 255, 0.28)"
@@ -22,9 +22,9 @@ const avatarOverrides = (
     colorShamrock: color.success,
     colorFire: color.warning,
     colorCrimson: color.danger,
-    colorLicorice: color.darkest,
+    colorLicorice: color.licorice,
     colorBarney: color.alert,
-    colorAsh: color.dark,
+    colorAsh: color.ash,
   };
 };
 

@@ -4,38 +4,38 @@ import { colors } from "../themeOverrides";
 const modalOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    textColor: color.darkest,
-    background: color.lightest,
-    borderColor: color.medium,
-    inverseBackground: color.darkest,
-    inverseTextColor: color.lightest,
+    textColor: color.licorice,
+    background: color.white,
+    borderColor: color.slate,
+    inverseBackground: color.licorice,
+    inverseTextColor: color.white,
   };
 };
 
 const modalBodyOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    inverseBackground: color.darker,
+    inverseBackground: color.oxford,
   };
 };
 
 const modalFooterOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    background: color.lighter,
-    borderColor: color.medium,
-    inverseBackground: color.darker,
-    inverseBorderColor: color.darkest,
+    background: color.porcelain,
+    borderColor: color.slate,
+    inverseBackground: color.oxford,
+    inverseBorderColor: color.licorice,
   };
 };
 
 const modalHeaderOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    background: color.lightest,
-    borderColor: color.medium,
-    inverseBackground: color.darkest,
-    inverseBorderColor: color.darkest,
+    background: color.white,
+    borderColor: color.slate,
+    inverseBackground: color.licorice,
+    inverseBorderColor: color.licorice,
   };
 };
 

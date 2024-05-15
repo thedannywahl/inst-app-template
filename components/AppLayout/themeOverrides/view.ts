@@ -4,21 +4,21 @@ import { colors } from "../themeOverrides";
 const viewOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    color: color.darkest,
-    colorPrimaryInverse: color.lightest,
-    borderColorPrimary: color.light,
-    borderColorSecondary: color.dark,
+    color: color.licorice,
+    colorPrimaryInverse: color.white,
+    borderColorPrimary: color.tiara,
+    borderColorSecondary: color.ash,
     borderColorSuccess: color.success,
     borderColorBrand: color.info,
     borderColorInfo: color.info,
     borderColorAlert: color.alert,
     borderColorWarning: color.warning,
     borderColorDanger: color.danger,
-    borderColorTransparent: colors.fixed.transparent,
+    borderColorTransparent: "transparent",
     debugOutlineColor: color.danger,
-    backgroundPrimary: color.lightest,
-    backgroundSecondary: color.lighter,
-    backgroundPrimaryInverse: color.darkest,
+    backgroundPrimary: color.white,
+    backgroundSecondary: color.porcelain,
+    backgroundPrimaryInverse: color.licorice,
     backgroundBrand: color.info,
     backgroundInfo: color.info,
     backgroundAlert: color.alert,
@@ -28,7 +28,7 @@ const viewOverrides = (mode: Mode, ui: UI) => {
     focusColorInfo: color.info,
     focusColorDanger: color.danger,
     focusColorSuccess: color.success,
-    focusColorInverse: color.lightest,
+    focusColorInverse: color.white,
   };
 };
 

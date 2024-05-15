@@ -7,9 +7,9 @@ const linkOverrides = (mode: Mode, ui: UI) => {
     color: color.info,
     focusOutlineColor: color.info,
     hoverColor: color.infoHover,
-    colorInverse: color.lighter,
-    focusInverseOutlineColor: color.lightest,
-    focusInverseIconOutlineColor: color.lightest,
+    colorInverse: color.porcelain,
+    focusInverseOutlineColor: color.white,
+    focusInverseIconOutlineColor: color.white,
   };
 };
 

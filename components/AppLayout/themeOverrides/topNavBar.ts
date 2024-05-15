@@ -35,23 +35,23 @@ const topNavBarLayoutOverrides = (
   return {
     desktopInlinePadding: "1.5rem !important",
     breakpoint: "684",
-    desktopBackground: color.lighter,
-    desktopBackgroundInverse: color.darker,
+    desktopBackground: color.porcelain,
+    desktopBackgroundInverse: color.oxford,
     desktopBottomBorder: `0.0625rem solid ${
-      isHighContrast ? color.darkest : color.light
+      isHighContrast ? color.licorice : color.porcelain
     }`,
     desktopBottomBorderInverse: `0.0625rem solid ${
-      isHighContrast ? color.lightest : color.dark
+      isHighContrast ? color.white : color.ash
     }`,
-    desktopUserSeparatorColor: color.dark,
-    desktopUserSeparatorColorInverse: color.light,
-    smallViewportBackground: color.lighter,
-    smallViewportBackgroundInverse: color.darker,
+    desktopUserSeparatorColor: color.ash,
+    desktopUserSeparatorColorInverse: color.tiara,
+    smallViewportBackground: color.porcelain,
+    smallViewportBackgroundInverse: color.oxford,
     smallViewportBottomBorder: `0.0625rem solid ${
-      isHighContrast ? color.darkest : color.light
+      isHighContrast ? color.licorice : color.tiara
     }`,
     smallViewportBottomBorderInverse: `0.0625rem solid ${
-      isHighContrast ? color.lightest : color.dark
+      isHighContrast ? color.white : color.ash
     }`,
   };
 };

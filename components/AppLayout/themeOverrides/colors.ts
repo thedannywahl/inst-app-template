@@ -59,19 +59,19 @@ const colors = {
       },
       alert: "rgb(209, 78, 184)",
       get alertHover() {
-        return lighten(colors.standard.dark.alert, 10);
+        return lighten(colors.standard.dark.alert, 5);
       },
       success: "rgb(12, 152, 84)",
       get successHover() {
-        return lighten(colors.standard.dark.success, 10);
+        return lighten(colors.standard.dark.success, 5);
       },
-      danger: "rgb(255, 75, 98)",
+      danger: "rgb(255, 31, 57)",
       get dangerHover() {
-        return lighten(colors.standard.dark.danger, 10);
+        return lighten(colors.standard.dark.danger, 5);
       },
       warning: standard.colors.fire,
       get warningHover() {
-        return lighten(colors.standard.dark.warning, 10);
+        return lighten(colors.standard.dark.warning, 5);
       },
     },
   },
@@ -83,7 +83,7 @@ const colors = {
       get oxford() {
         return colors.fixed.black;
       },
-      ash: "#556572",
+      ash: "rgb(85, 101, 114)",
       get slate() {
         return colors.highContrast.light.ash;
       },
@@ -118,12 +118,12 @@ const colors = {
     },
     dark: {
       shamrock: standard.colors.shamrock,
-      barney: "#CA35AD",
-      crimson: "#EB0621",
+      barney: "rgb(202, 53, 173)",
+      crimson: "rgb(235, 6, 33)",
       fire: standard.colors.fire,
       licorice: highContrast.colors.white,
       oxford: highContrast.colors.white,
-      ash: "#6B7780",
+      ash: "rgb(107, 119, 128)",
       get slate() {
         return colors.highContrast.dark.ash;
       },
@@ -139,11 +139,11 @@ const colors = {
       get white() {
         return colors.fixed.black;
       },
-      info: "#037ABF",
+      info: "rgb(3, 122, 191)",
       get infoHover() {
         return lighten(colors.highContrast.dark.info, 15);
       },
-      alert: "#CA35AD",
+      alert: "rgb(202, 53, 173)",
       get alertHover() {
         return lighten(colors.highContrast.dark.alert, 15);
       },
@@ -151,7 +151,7 @@ const colors = {
       get successHover() {
         return lighten(colors.highContrast.dark.success, 15);
       },
-      danger: "#EB0621",
+      danger: "rgb(235, 6, 33)",
       get dangerHover() {
         return lighten(colors.highContrast.dark.danger, 15);
       },

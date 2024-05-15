@@ -4,15 +4,15 @@ import { colors } from "../themeOverrides";
 const billboardOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    iconColor: color.dark,
+    iconColor: color.ash,
     iconHoverColor: color.info,
-    backgroundColor: color.lightest,
-    iconHoverColorInverse: color.lightest,
-    messageColor: color.dark,
+    backgroundColor: color.white,
+    iconHoverColorInverse: color.white,
+    messageColor: color.ash,
     messageColorClickable: color.info,
-    messageColorInverse: color.lighter,
+    messageColorInverse: color.porcelain,
     clickableActiveBg: color.info,
-    clickableActiveText: color.lightest,
+    clickableActiveText: color.white,
   };
 };
 

@@ -9,7 +9,7 @@ const formFieldOverrides = (mode: Mode, ui: UI) => {
 const formFieldLabelOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    color: color.darkest,
+    color: color.licorice,
   };
 };
 
@@ -21,7 +21,7 @@ const formFieldLayoutOverrides = (mode: Mode, ui: UI) => {
 const formFieldMessageOverrides = (mode: Mode, ui: UI) => {
   const color = colors[ui][mode];
   return {
-    colorHint: color.darkest,
+    colorHint: color.licorice,
     colorError: color.danger,
     colorSuccess: color.success,
   };
