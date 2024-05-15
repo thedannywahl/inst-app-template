@@ -20,7 +20,7 @@ const ThemeOverrides = (
       Badge: Overrides.Badge(mode, ui, isHighContrast),
 
       // InstructureUI.Utilities.BaseButton
-      BaseButton: Overrides.BaseButton(mode, ui),
+      BaseButton: Overrides.BaseButton(mode, ui, isDark, isHighContrast),
 
       // InstructureUI.Billboard
       Billboard: Overrides.Billboard(mode, ui),
