@@ -1,1 +1,1 @@
-export { signature } from "./utils";
+export { signature, mix } from "./utils";
