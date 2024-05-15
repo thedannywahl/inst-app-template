@@ -1,5 +1,5 @@
 "use client";
-import { signature } from "@/lib/utils";
+import { signature } from "@/lib";
 import {
   Button,
   Checkbox,
@@ -12,10 +12,10 @@ import {
   View,
 } from "@instructure/ui";
 import { useContexts } from "context";
+import { useTranslations } from "next-intl";
 import React from "react";
 import type { ChangeEvent } from "react";
 import type { Theme } from "types";
-import { useTranslations } from "next-intl";
 
 /**
  * Renders the Page component.

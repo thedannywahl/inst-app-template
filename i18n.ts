@@ -1,6 +1,6 @@
 import { getRequestConfig } from "next-intl/server";
 import { notFound } from "next/navigation";
-import type { Locale } from "types";
+import type { Locale } from "./app/types";
 
 // List of supported locales
 export const locales: Locale[] = [
@@ -11,7 +11,7 @@ export const locales: Locale[] = [
   "pt",
 ] as const;
 
-export const defaultLocale = locales[0] as Locale;
+export const defaultLocale = "en";
 
 export default getRequestConfig(async () => {
   // This can either be defined statically if only a single locale
@@ -21,10 +21,7 @@ export default getRequestConfig(async () => {
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
 
   return {
-    messages: (
-      await (locale === defaultLocale
-        ? import(`@/messages/${defaultLocale}.json`)
-        : import(`@/messages/${locale}.json`))
-    ).default,
+    locale,
+    messages: (await import(`@/messages/${locale}.json`)).default,
   };
 });

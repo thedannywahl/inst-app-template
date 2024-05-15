@@ -22,10 +22,19 @@
       "*.js",
       "*.jsx",
       "*.mjs",
-      ".md",
-      ".mdx"
+      "*.md",
+      "*.mdx"
     ],
-    "ignore": ["docs/*"]
+    "ignore": [
+      "docs/*",
+      "test-results/*",
+      "playwright-report/*",
+      "public/*",
+      ".next/*",
+      "node_modules/*",
+      "pnpm-lock.yaml",
+      "package.json"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -47,10 +56,19 @@
       "*.js",
       "*.jsx",
       "*.mjs",
-      ".md",
-      ".mdx"
+      "*.md",
+      "*.mdx"
     ],
-    "ignore": ["docs/*"]
+    "ignore": [
+      "docs/*",
+      "test-results/*",
+      "playwright-report/*",
+      "public/*",
+      ".next/*",
+      "node_modules/*",
+      "pnpm-lock.yaml",
+      "package.json"
+    ]
   },
   "linter": {
     "enabled": true,
@@ -74,10 +92,19 @@
       "*.js",
       "*.jsx",
       "*.mjs",
-      ".md",
-      ".mdx"
+      "*.md",
+      "*.mdx"
     ],
-    "ignore": ["docs/*"]
+    "ignore": [
+      "docs/*",
+      "test-results/*",
+      "playwright-report/*",
+      "public/*",
+      ".next/*",
+      "node_modules/*",
+      "pnpm-lock.yaml",
+      "package.json"
+    ]
   },
   "javascript": {
     "parser": {
