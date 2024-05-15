@@ -28,7 +28,7 @@
     "browserslist": "^4.23.0",
     "next": "^14.2.3",
     "next-auth": "^4.24.7",
-    "next-intl": "^3.13.0",
+    "next-intl": "^3.14.0",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -36,8 +36,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
     "@instructure/browserslist-config-canvas-lms": "^2.0.0",
-    "@microsoft/api-documenter": "^7.24.5",
-    "@microsoft/api-extractor": "^7.43.4",
+    "@microsoft/api-documenter": "^7.24.6",
+    "@microsoft/api-extractor": "^7.43.5",
     "@playwright/experimental-ct-react": "^1.44.0",
     "@playwright/test": "^1.44.0",
     "@types/node": "^20.12.12",
