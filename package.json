@@ -18,6 +18,7 @@
     "@dotenvx/dotenvx": "^0.38.0",
     "@instructure/emotion": "^9.0.1",
     "@instructure/ui": "^9.0.1",
+    "@instructure/ui-color-utils": "^9.0.1",
     "@instructure/ui-react-utils": "^9.0.1",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
@@ -54,7 +55,5 @@
       "@instructure/ui-test-sandbox>sinon": "^17.0.1"
     }
   },
-  "browserslist": [
-    "extends @instructure/browserslist-config-canvas-lms"
-  ]
+  "browserslist": ["extends @instructure/browserslist-config-canvas-lms"]
 }

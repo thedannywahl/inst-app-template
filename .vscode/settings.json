@@ -2,26 +2,4 @@
   "files.associations": {
     "*.json": "jsonc"
   },
-  "colorize.languages": [
-    "css",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "colorize.colorized_colors": [
-    "HEXA",
-    "RGB"
-  ],
-  "colorize.hide_current_line_decorations": false,
-  "colorize.exclude": [
-    "**/.**",
-    "**/.**/**",
-    "**/**",
-    "**/**/**"
-  ],
-  "colorize.include": [
-    "**/components/AppLayout/themeOverrides/colors.ts",
-    "**/public/*.css"
-  ],
 }
