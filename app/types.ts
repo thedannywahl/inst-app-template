@@ -13,10 +13,15 @@ export type Children = {
   children: React.ReactNode;
 };
 
+// @todo: remove this if `mix()` is not used
 export type RGB =
   | `rgb(${number} ${number} ${number})`
   | `rgb(${number} ${number} ${number} / ${number})`
   | `#${string}`;
+
+export type Locale =
+  | Lowercase<string>
+  | `${Lowercase<string>}-${Uppercase<string>}`;
 
 // Modal
 export type ModalProps =

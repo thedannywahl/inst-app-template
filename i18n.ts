@@ -1,14 +1,8 @@
 import { getRequestConfig } from "next-intl/server";
 import { notFound } from "next/navigation";
+import type { Locale } from "types";
 
-/**
- * @todo: typing `Locales` as a string pattern causes `AvailableLocale`
- * to be `string` instead of a union of the `locales` array.
- * const str: AvailableLocale = "fr"; // This should cause a TypeScript error
- * const arr: AvailableLocale[] = ["fr"]; // This should cause a TypeScript error
- */
-type Locale = Lowercase<string> | `${Lowercase<string>}-${Uppercase<string>}`;
-
+// List of supported locales
 export const locales: Locale[] = [
   "en", // Default locale
   "en-US",
@@ -17,7 +11,11 @@ export const locales: Locale[] = [
   "pt",
 ] as const;
 
-export default getRequestConfig(async ({ locale }) => {
+export default getRequestConfig(async () => {
+  // This can either be defined statically if only a single locale
+  // is supported, or alternatively read from user settings
+  const locale = locales[0];
+
   if (!locales.includes(locale as (typeof locales)[number])) notFound();
 
   return {
