@@ -1,27 +1,30 @@
 import { InstUI } from "@/components/AppLayout";
 import "@/public/globals.css";
 import { ContextProvider } from "context";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 /**
  * Renders the root layout of the application.
  *
  * @param children - The content to be rendered within the layout.
- * @param params - The parameters for the layout.
- * @param params.locale - The locale for the layout.
- * @returns The JSX element representing the root layout.
+ * @returns a Promise representing the root layout.
  */
-function RootLayout({
+async function RootLayout({
   children,
-  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
-}>): JSX.Element {
+}>): Promise<JSX.Element> {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
     <ContextProvider>
-      <html lang={locale}>
-        <InstUI>{children}</InstUI>
-      </html>
+      <NextIntlClientProvider messages={messages}>
+        <html lang={locale}>
+          <InstUI>{children}</InstUI>
+        </html>
+      </NextIntlClientProvider>
     </ContextProvider>
   );
 }

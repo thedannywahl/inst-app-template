@@ -15,6 +15,7 @@ import { useContexts } from "context";
 import React from "react";
 import type { ChangeEvent } from "react";
 import type { Theme } from "types";
+import { useTranslations } from "next-intl";
 
 /**
  * Renders the Page component.
@@ -28,6 +29,8 @@ import type { Theme } from "types";
  */
 function Page(): JSX.Element {
   const { App, Tray, Modal } = useContexts();
+
+  const t = useTranslations("Page");
 
   const showModal = () => {
     Modal.show(content, header, footer, {
@@ -92,7 +95,7 @@ function Page(): JSX.Element {
   console.log(App);
   console.log(contextValues);
 
-  const content = <View as="div">Lorem Ipsum Sit Dolor...</View>;
+  const content = <View as="div">{t("title")}</View>;
   const header = "Title";
   const footer = "Footer";
 
