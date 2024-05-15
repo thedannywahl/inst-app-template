@@ -15,7 +15,7 @@
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^0.38.0",
+    "@dotenvx/dotenvx": "^0.39.0",
     "@instructure/emotion": "^9.0.1",
     "@instructure/ui": "^9.0.1",
     "@instructure/ui-color-utils": "^9.0.1",
@@ -55,5 +55,7 @@
       "@instructure/ui-test-sandbox>sinon": "^17.0.1"
     }
   },
-  "browserslist": ["extends @instructure/browserslist-config-canvas-lms"]
+  "browserslist": [
+    "extends @instructure/browserslist-config-canvas-lms"
+  ]
 }
