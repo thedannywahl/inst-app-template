@@ -35,6 +35,7 @@ const nextConfig = withMDX()({
   },
   experimental: {
     mdxRs: true,
+    instrumentationHook: true,
     optimizePackageImports: [
       "@instructure/ui",
       "@instructure/emotion",
