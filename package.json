@@ -38,8 +38,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
     "@instructure/browserslist-config-canvas-lms": "^2.0.0",
-    "@microsoft/api-documenter": "^7.24.6",
-    "@microsoft/api-extractor": "^7.43.5",
+    "@microsoft/api-documenter": "^7.24.7",
+    "@microsoft/api-extractor": "^7.43.6",
     "@playwright/experimental-ct-react": "^1.44.0",
     "@playwright/test": "^1.44.0",
     "@types/node": "^20.12.12",
