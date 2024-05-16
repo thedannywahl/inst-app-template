@@ -12,6 +12,23 @@ const withNextIntl = createNextIntlPlugin();
  * @type {import('next').NextConfig}
  */
 const nextConfig = withMDX()({
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "x-app-name",
+            value: pkg.name,
+          },
+          {
+            key: "x-app-version",
+            value: pkg.version,
+          },
+        ],
+      },
+    ];
+  },
   env: {
     name: pkg.name,
     version: pkg.version,
